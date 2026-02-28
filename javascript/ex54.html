@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex54 -->
+    <script>
+      //함수의 중급기법 - 함수형 변수
+      //함수 : 코드 뭉치를 기능적으로 분리하고 이름을 붙여 논 것.
+      //일반함수
+      function myFunc() {
+        console.log("myFunc호출됨.");
+      }
+      myFunc();
+
+      //함수형 변수 : 함수를 변수(값)처럼 코드를 저장해 놓는다.
+      // 함수의 매개변수(값,코드)로 전달하려고!
+      // 비동기처리를 하려고(코드의 선언시점과 실행시점이 다른 것)
+      // 예1) 사용자의 UI액션 - 버튼선언시점과 클릭시점이 다르다.
+      // 예2) HTTP통신 - 요청시점과 응답시점이 다르다.
+      let funcVar = function () {
+        //익명함수
+        console.log("funcVar호출됨.");
+      };
+      funcVar();
+
+      let numVar = 10;
+
+      //익명함수의 매개변수와 반환값
+      let funcVar2 = function (param) {
+        return param * 2;
+      };
+
+      //화살표함수(연산자) : ES6버전부터
+      let funcVar3 = (param) => {
+        return param * 2;
+      };
+
+      //일반함수의 매개변수로 함수형 변수를 입력해 보자.
+      let sumFunc = (a, b) => {
+        return a + b;
+      };
+      let mulFunc = (a, b) => {
+        return a * b;
+      };
+      //입력값과 메소드(코드)까지 입력해준다.
+      function sum(param1, param2, method) {
+        return method(param1, param2);
+      }
+      let result = sum(10, 20, sumFunc);
+      let result2 = sum(10, 20, mulFunc);
+      console.log(result);
+    </script>
+  </head>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex32 -->
+    <title>시멘틱태그 구조 만들기</title>
+    <!-- float속성 X inline-block속성 O -->
+    <!-- FlexBox 실무에서 -->
+    <style>
+      /* 초기화코드 */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #wrapper {
+        /* 전체콘텐츠의 너비 고정(반응형아님) */
+        width: 1000px;
+        background-color: skyblue;
+        /* 콘텐츠를 수평가운데로 정렬 */
+        /* 좌우여백 auto : 왼쪽과 오른쪽 공백을 균등배분 */
+        margin: 0 auto;
+      }
+      header {
+        height: 100px;
+        background-color: lightcoral;
+      }
+      nav {
+        height: 50px;
+        background-color: yellow;
+      }
+      main {
+        height: 500px;
+        background-color: lightgreen;
+      }
+      aside {
+        height: 100%;
+        width: 29%;
+        display: inline-block;
+        background-color: lightpink;
+      }
+      section {
+        height: 100%;
+        width: 70%;
+        display: inline-block;
+        background-color: orange;
+      }
+      footer {
+        height: 100px;
+        background-color: plum;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>header</header>
+      <nav>nav</nav>
+      <main>
+        <aside>aside</aside>
+        <section>section</section>
+      </main>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex24 -->
+    <title>배치하기 - display속성</title>
+    <!-- display : none 안보이게 한다. -->
+    <!-- block : 한줄차지, 줄바꿈됨. -->
+    <!-- inline : 한칸차지, 줄바꿈안됨. 가로/세로 자기공간 확보못함. -->
+    <!-- inline-block : inline속성이면서 가로/세로 자기공간 확보 -->
+
+    <!-- disply block인 태그 -->
+    <!-- div h1~h6 p hr ol ul li table form -->
+    <!-- disply inline인 태그 -->
+    <!-- span a img input text속성(b,i,sup,sub,ins...) label -->
+    <style>
+      body * {
+        border: 1px solid red;
+      }
+      #div1 {
+        display: none;
+      }
+      #span2 {
+        width: 200px;
+        height: 200px;
+        /* inline이면서 자기공간을 확보하려면 inline-block */
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">DIV는 Block속성이다.</div>
+    <span id="span1">SPAN은 Inline속성이다.</span>
+    <span id="span2">SPAN은 Inline속성이다.</span>
+    <span>SPAN은 Inline속성이다.</span>
+  </body>
+</html>

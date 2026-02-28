@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex41 -->
+    <title>콘텐츠 초과 처리 - overflow속성</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #333;
+        margin: 20px;
+
+        /* Firefox */
+        scrollbar-width: none;
+
+        /* IE, Edge */
+        -ms-overflow-style: none;
+      }
+      /* 스크롤바를 UI적으로 없애기 */
+      .box::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+      }
+      /* 기본값, 초과된 콘텐츠가 노출된다. */
+      .visible {
+        overflow: visible;
+        background-color: lightblue;
+      }
+      /* 초과된 콘텐츠를 숨긴다(잘린다) */
+      .hidden {
+        overflow: hidden;
+        background-color: lightgreen;
+      }
+      /* 스크롤이 생김 */
+      .scroll {
+        /* x축, y축 모두 스크롤바가 생김 */
+        /* overflow: scroll; */
+        /* y축만 스크롤바 생기게 */
+        overflow-y: scroll;
+        background-color: lightcoral;
+      }
+      .auto {
+        /* 콘텐츠가 초과할 때만 스크롤바가 생기게 함. */
+        overflow: auto;
+        background-color: lightpink;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- (div.box>lorem)*4 -->
+    <div class="box visible">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati
+      reiciendis dicta, dignissimos velit odit hic rem. Dolorem cumque explicabo
+      quam! Dolorem sit voluptatum quasi totam ducimus distinctio maiores
+      provident laudantium.
+    </div>
+    <div class="box hidden">
+      Doloribus eum minus itaque, ducimus fuga iure magnam atque omnis dolor
+      impedit quas cupiditate eius repellendus accusantium dolores odit rerum
+      quis odio error dignissimos nam consectetur sapiente? Illo, dignissimos
+      dicta.
+    </div>
+    <div class="box scroll">
+      Consequatur sequi perspiciatis, illo autem veritatis accusamus, dolore
+      eius voluptatem, commodi numquam temporibus ex tempore culpa eum et ab
+      adipisci a placeat. Quibusdam sint quae assumenda ab, sequi dignissimos
+      iste.
+    </div>
+    <div class="box auto">Facere ut dignissimos</div>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex34 -->
+    <title>연습문제</title>
+    <script>
+      // 문제1
+      // 철수와 영희가 주사위 게임을 하고 있다.
+      // 철수가 주사위(랜덤수1~6)를 5번 던져서, 가장 큰 수를 얻고,
+      // 영희가 또 같은 방법으로 던져서 가장 큰 수를 얻는다.
+      // 철수와 영희의 가장 큰 수를 출력하고, 승자를 출력하시오.
+      // 출력예) "철수 승 : 6"
+      let max_chulsu = 0;
+      for (let i = 0; i < 5; i++) {
+        let num = Math.floor(Math.random() * 6) + 1;
+        if (num > max_chulsu) {
+          max_chulsu = num;
+        }
+      }
+
+      let max_younghee = 0;
+      for (let i = 0; i < 5; i++) {
+        let num = Math.floor(Math.random() * 6) + 1;
+        if (num > max_younghee) {
+          max_younghee = num;
+        }
+      }
+
+      console.log("철수 합", max_chulsu);
+      console.log("영희 합", max_younghee);
+
+      if (max_chulsu > max_younghee) {
+        console.log("철수 승", max_chulsu);
+      } else if (max_younghee > max_chulsu) {
+        console.log("영희 승", max_younghee);
+      } else {
+        console.log("무승부");
+      }
+
+      // 문제2
+      // 또다시 철수와 영희가 주사위 게임을 하고 있다.
+      // 철수가 주사위를 5번 던져서, 가장 큰 수를 십의 자릿수로,
+      // 가장 작은 수를 일의 자릿수로 만든다.
+      // 영희도 같은 방법으로 십의 자릿수+일의 자릿수를 만든다.
+      // 두 수를 비교하여 승자를 출력하시오.
+      // 출력예) "영희 승 : 62"
+
+      max_chulsu = 0; //재사용
+      let min_chulsu = 100;
+      for (let i = 0; i < 5; i++) {
+        let num = Math.floor(Math.random() * 6) + 1;
+        console.log("num:", num);
+        if (num > max_chulsu) {
+          max_chulsu = num;
+        }
+        if (num < min_chulsu) {
+          min_chulsu = num;
+        }
+      }
+      console.log("max_chulsu:", max_chulsu);
+      console.log("min_chulsu:", min_chulsu);
+
+      let sum_chulsu = max_chulsu * 10 + min_chulsu;
+      console.log("sum_chulsu", sum_chulsu);
+
+      max_younghee = 0; //재사용
+      min_younghee = 100;
+      for (let i = 0; i < 5; i++) {
+        let num = Math.floor(Math.random() * 6) + 1;
+        console.log("num:", num);
+        if (num > max_younghee) {
+          max_younghee = num;
+        }
+        if (num < min_younghee) {
+          min_younghee = num;
+        }
+      }
+      console.log("max_younghee:", max_younghee);
+      console.log("min_younghee:", min_younghee);
+
+      let sum_younghee = max_younghee * 10 + min_younghee;
+      console.log("sum_younghee", sum_younghee);
+
+      if (sum_chulsu > sum_younghee) {
+        console.log("철수 승", sum_chulsu);
+      } else if (sum_younghee > sum_chulsu) {
+        console.log("영희 승", sum_younghee);
+      } else {
+        console.log("무승부");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

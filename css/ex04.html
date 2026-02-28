@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex04.html -->
+    <title>id 선택자, class 선택자</title>
+    <!-- id : 문서 안에 유일한 태그로 지정(주민번호,학번) -->
+    <!-- class : 문서 안에 여러개를 묶어서 지정(1학년,2학년) -->
+    <!-- id 앞에 #을 붙임, class 앞에 .(점)을 붙임. -->
+    <style>
+      #header1 {
+        color: red;
+      }
+      /* id header2를 가진 태그의 글자색을 blue로 하시오. */
+      #header2 {
+        color: blue;
+      }
+      .tag1 {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="header1">제목태그 H1</h1>
+    <h1 id="header2">제목태그 H1</h1>
+    <p class="tag1">문단태그 p</p>
+    <a class="tag1" href="">앵커태그 a</a>
+  </body>
+</html>

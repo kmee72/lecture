@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex39 -->
+    <title>배열(Array) = 리스트(List)</title>
+    <script>
+      //C-C++/자바/C# : 배열과 리스트가 별도이다.
+      //JS,Python,Kotlin,Swift : 배열=리스트가 통합되었다.
+
+      //배열 : 데이터를 순차적으로(순번-인덱스)로 나열해 놓은 자료구조.
+      //램(RAM)
+      // 0x1000 +------+
+      //        |  10  | index 0
+      // 0x1004 +------+
+      //        |  20  |       1
+      // 0x1008 +------+
+      //        |  30  |       2
+      //        +------+
+      //형식
+      //let 배열이름 = [ 10, 20, 30 ];
+      //let 배열이름 = []  빈배열
+      let nums = [10, 20, 30];
+      //배열의 요소(아이템)값을 가져와 보자.
+      //배열이름[인덱스번호]로 가져온다.
+      console.log(nums[0]); //첫번째
+      console.log(nums[1]);
+      console.log(nums[2]);
+
+      console.log(nums[3]); //3인덱스에 값은 없다. -> undefined값으로 선언만 된다.
+      nums[3] = 40;
+      console.log(nums[3]);
+
+      //대량의 데이터에 접근하기 위해 반복문 사용!
+      //          0:인덱스의 시작 4:배열의 길이
+      //배열의 전체 아이템을 출력해보자.
+      for (let i = 0; i < 4; i++) {
+        console.log(nums[i]);
+      }
+      console.log(nums.length);
+
+      for (let i = 0; i < nums.length; i++) {
+        console.log(nums[i]);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

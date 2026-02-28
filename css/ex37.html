@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex37 -->
+    <title>position속성</title>
+    <!-- 웹페이지를 만드는 과정 -->
+    <!-- 화면 레이아웃(배치) - 박스모델(Box) -->
+    <!-- 1. html 기본구조(html, head, body) -->
+    <!-- 2. 시멘틱태그(header,footer,nav,main,section,aside) -->
+    <!-- 3. div태그에 다 넣는다. header -> <div id="header"> -->
+    <!-- 4. display: block,inline,inline-block -->
+    <!-- 5. flexbox 배치(정렬) -->
+    <!-- 6. text-align, verical-align, line-height -->
+    <!-- 7. width, height -->
+    <!-- 8. overflow: hidden 내용물 넘침 설정 -->
+    <!-- 9. margin, padding  -->
+    <!-- 10. img object-fit : 이미지 배치  -->
+    <!-- 11. background-size : 이미지 배치  -->
+    <!-- 12. position -->
+    <!--    1) static(고정) : 기본값, 순차적으로 쌓이는 방식 -->
+    <!--    2) relative(상대적) : 상대(부모)좌표에 자신이 위치  -->
+    <!--    3) absolute(절대) : 절대좌표에 자신이 위치 -->
+    <!--                      : 기준 부모태그 : relative,asolute,fixed 태그여야 됨 -->
+    <!--    4) fixed(고정) : 뷰포트(웹브라우저 화면) 기준 -->
+    <!--    5) sticky(고정) : 특정 스크롤 위치에 고정 -->
+    <!-- 13. top,bottom,left,right : 실체 XY위치값(static에서는 적용안됨.) -->
+    <style>
+      #static-box {
+        /* 기본값, 순차적인 배치 */
+        position: static;
+        background-color: aqua;
+      }
+      #relative-box {
+        /* 상태좌표로 자기위치를 선정 */
+        position: relative;
+        top: 10px;
+        left: 10px;
+        background-color: blueviolet;
+        margin-bottom: 20px;
+      }
+      #container {
+        position: relative;
+        left: 20px;
+        height: 50px;
+        background-color: yellow;
+        border: 1px solid red;
+      }
+      #absolute-box {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        color: white;
+        background-color: brown;
+      }
+      #fixed-box {
+        /* 웹브라우저 특정위치에 고정(Float Button에 주로 사용) */
+        position: fixed;
+        bottom: 10px;
+        right: 20px;
+        background-color: green;
+      }
+      #sticky-box {
+        /* 스크롤시 화면에 특정위치에 고정 */
+        position: sticky;
+        top: 0px;
+        background-color: lightpink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="static-box">Static</div>
+    <div id="relative-box">Relative</div>
+    <div id="container">
+      <div id="absolute-box">Absolute</div>
+    </div>
+    <div id="fixed-box">Fixed</div>
+    <div id="sticky-box">Sticky(스크롤하면 상단에 고정됨)</div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo,
+      exercitationem aperiam asperiores natus obcaecati reprehenderit iusto hic
+      reiciendis beatae illum voluptates molestias, laborum quibusdam,
+      perspiciatis voluptatem numquam maxime! Repudiandae, itaque. Ea numquam
+      nisi, error praesentium alias dolorum, quae doloremque nihil voluptate rem
+      molestiae, perspiciatis quod culpa natus temporibus magnam consequatur
+      delectus ratione. Facilis optio deleniti commodi rem accusamus distinctio
+      tempore. Quidem, est. Beatae doloremque cum odit sint quo eligendi esse id
+      optio aspernatur labore, saepe non veritatis quia, consequuntur similique
+      velit harum temporibus inventore iusto sapiente sequi qui eveniet hic!
+      Atque, quos placeat. Placeat reprehenderit fugit quasi quo error
+      perspiciatis hic cum doloremque dolor vitae odio excepturi, sapiente culpa
+      soluta enim expedita repudiandae ducimus vel, minima quis molestiae
+      commodi accusantium. Ut consequatur animi, laboriosam praesentium
+      voluptatibus adipisci modi fuga itaque fugiat at delectus cum velit odio
+      quibusdam repudiandae id dolorum fugit sequi veniam placeat vero repellat?
+      Dolore nihil tenetur odio.
+    </p>
+  </body>
+</html>

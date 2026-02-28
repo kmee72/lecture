@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>연습문제 - 계산기 프로그램</title>
+  </head>
+  <body>
+    <input type="text" id="num1" value="10" />
+    <input type="text" id="num2" value="3" />
+    <input type="text" disabled="disbled" id="result" value="" />
+    <button onclick="clear()">Input값 가져오기/설정하기</button>
+    <script>
+      function calc() {
+        // input태그의 value가져오기
+        let num1_value = document.getElementById("num1").value;
+        console.log(num1_value);
+        let num2_value = document.getElementById("num2").value;
+        console.log(num2_value);
+        // input태그의 value설정하기
+        let result = document.getElementById("result");
+        result.value = "3.333";
+
+        //clear
+        result.value = "";
+      }
+      //clear은 JS내장함수이므로 호출안됨.
+      //전역 객체(window, document)가 이미 가지고 있는 함수이므로
+      //피해야 되는 함수 목록
+      //clear() close()	open()	print() focus() submit()	reset()
+      //alert() confirm() prompt()
+      function clear() {
+        console.log("호출!");
+      }
+    </script>
+  </body>
+</html>

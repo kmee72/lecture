@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연습문제 - 계산기 프로그램</title>
+    <style>
+      /* CSS 스타일은 그대로 유지하거나 가독성을 위해 소폭 조정 가능 */
+      #wrap {
+        border: 1px solid black;
+        padding: 20px;
+        margin: 0 auto;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      #res {
+        display: flex;
+        align-items: center;
+      }
+      #num1,
+      #num2,
+      #result {
+        margin-bottom: 15px;
+        width: 150px;
+        height: 25px;
+        text-align: center;
+        border: 1px solid #ccc;
+      }
+      #result {
+        background-color: #707070;
+        color: white;
+      }
+      .btn-calc {
+        width: 220px;
+        height: 30px;
+        background-color: #286cd1;
+        border: 0;
+        color: white;
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+      #del {
+        width: 220px;
+        height: 30px;
+        background-color: #f13232;
+        border: 0;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+
+    <script>
+      // 계산 기능을 수행하는 함수 정의
+      function calculate(operator) {
+        const n1 = Number(document.getElementById("num1").value);
+        const n2 = Number(document.getElementById("num2").value);
+        const resField = document.getElementById("result");
+
+        if (operator === "+") resField.value = n1 + n2;
+        else if (operator === "-") resField.value = n1 - n2;
+        else if (operator === "*") resField.value = n1 * n2;
+        else if (operator === "/") {
+          resField.value = n2 !== 0 ? n1 / n2 : "0으로 나눌 수 없음";
+        }
+      }
+
+      // 초기화 함수(clear()불가)
+      function resetFields() {
+        document.getElementById("num1").value = "";
+        document.getElementById("num2").value = "";
+        document.getElementById("result").value = "";
+      }
+
+      window.onload = () => {
+        let buttons = document.getElementsByClassName("btn-calc");
+        buttons[0].onclick = () => {
+          alert("클릭");
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div>
+        <p><strong>JavaScript</strong></p>
+        <p>계산기 프로그램을 작성해보자</p>
+      </div>
+
+      <div>
+        <label>숫자 1</label>
+        <input type="text" id="num1" />
+      </div>
+      <div>
+        <label>숫자 2</label>
+        <input type="text" id="num2" />
+      </div>
+      <div id="res">
+        <label>연산 결과</label>
+        <input type="text" id="result" disabled />
+      </div>
+
+      <div id="btn-group">
+        <button class="btn-calc" onclick="calculate('+')">덧셈</button>
+        <button class="btn-calc" onclick="calculate('-')">뺄셈</button>
+        <button class="btn-calc" onclick="calculate('*')">곱셈</button>
+        <button class="btn-calc" onclick="calculate('/')">나눗셈</button>
+        <button id="del" onclick="resetFields()">지우기</button>
+      </div>
+    </div>
+  </body>
+</html>

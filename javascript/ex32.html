@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex32 -->
+    <title>연습문제</title>
+    <script>
+      // 문제1
+      //1. 영희가 징검다리 게임을 하고 있다.
+      // 1부터 100까지 번호가 쓰여진 돌을 건너는데,
+      // 끝자리가 3으로 끝나는 돌만 밟지않고 건너 뛴다.
+      // 그러면, 영희는 몇번 돌을 밟게 되는가?
+      // 그리고 밟은 돌의 숫자의 총합은?
+      let sum = (count = 0);
+      for (let i = 1; i <= 100; i++) {
+        if (i % 10 == 3) {
+        } else {
+          count++;
+          sum = sum + i;
+        }
+      }
+      console.log(count);
+      console.log(sum);
+
+      //문제2
+      //2. 주사위 1개를 10번 던져서 나온 수의 총합을 구하시오.
+      //  그리고 짝수가 나온 총 횟수를 출력하시오.
+      sum = 0; //재선언X 재사용O(초기화 필수!)
+      count = 0;
+      for (let i = 1; i <= 10; i++) {
+        let dice = Math.floor(Math.random() * 6) + 1;
+        sum = sum + dice;
+        if (dice % 2 == 0) {
+          count++;
+        }
+      }
+      console.log(count);
+      console.log(sum);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      //문제36 - 가장 긴 단어는?
+      //forEach()
+      let names = ["장미", "수선화", "코스모스"];
+      //최대값 공식, 배열순회
+      let max = 0;
+      let max_name = "";
+      //리팩토리 - KV객체
+      for (const name of names) {
+        if (name.length > max) {
+          max = name.length;
+          max_name = name;
+        }
+      }
+      console.log(max);
+      console.log(max_name);
+    </script>
+  </head>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex28.html -->
+    <title>메타(meta)태그 : html문서의 정보를 담는 태그</title>
+    <!-- charset : 문자인코딩 타입 - UTF-8(유니코드), EUC-KR(완성형한글) -->
+    <!-- 유니코드 : 전세계 표준, 완성형한글 : 우리나라 표준(2350자) -->
+    <meta charset="UTF-8" />
+    <!-- viewport : 모바일 해상도 대응 -->
+    <!-- device-width : 웹페이지의 너비가 모바일기기 너비와 동일하게 -->
+    <!-- initial-scale : 확대비율 1.0, 2.0이면 2배확대, 0.5이면 50% 축소 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 5초마다 한번씩 자동 새로고침 -->
+    <!-- <meta http-equiv="refresh" content="5" /> -->
+    <!-- 5초후에 네이버로 이동 -->
+    <!-- <meta http-equiv="refresh" content="5; url=http://www.naver.com" /> -->
+
+    <!-- 부가적인 기능-별로 중요하지 않음. -->
+    <!-- X-UA-Compatible : 익스플로러 브라우저의 최신버전에 대응해 줄것 -->
+    <!-- ie=edge : IE가 없으면 엣지브라우저로 대치 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- content-type : 콘텐츠의 형식을 알려줌. -->
+    <!-- text/html : text기반의 html 콘텐츠이다. -->
+    <!-- text/xml : text기반의 xml 콘텐츠이다. xml은 태그기반으로 된 정보 문서. -->
+    <!-- application/json : Key-Value형식의 문자열 콘텐츠이다. -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <!-- keyword : 검색로봇에 의해 검색되는 단어(키워드) 설정 -->
+    <meta name="keyword" content="쇼핑몰, 패션, 의류, 음료수" />
+    <!-- description : 검색로봇에 의해 검색되는 설명문구 -->
+    <meta name="description" content="저희는 종합쇼핑몰 다사와입니다." />
+    <!-- noindex : 검색로봇에 안걸리게 해달라. -->
+    <!-- nofollow : 검색로봇이 하위페이지를 검색하지 않게 해달라. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- author : 웹페이지 개발자 -->
+    <meta name="author" content="홍길동 개발자" />
+  </head>
+  <body></body>
+</html>

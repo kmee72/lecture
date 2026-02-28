@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- ex56 -->
+    <!-- 클로드(코드) 사용 예제 -->
+    <!-- AI를 통한 코드 작성시 유의점 -->
+    <!-- 1. 나태해진다. -> 작성된 코드를 자세히 안본다! -->
+    <!-- 2. 내가 알수없는 코드가 만들어지면, 손대지 못한다. -->
+    <!--    -> 내가 이해가능한 코드로 변경해서 사용한다. -->
+    <!--    -> 코멘트를 자세히 달아 달라고 요청한다. -->
+    <!--    -> 고급문법(block coding,정규식...) 자제! => 초/중급 개발자 이해가능 -->
+    <!-- 3. 중대형 프로젝트 이상의 고도의 작업은 생성하지 못한다.  -->
+    <title>사칙연산 프로그램</title>
+  </head>
+  <body>
+    <script>
+      // 사칙연산 함수들
+      function add(a, b) {
+        return a + b;
+      }
+
+      function subtract(a, b) {
+        return a - b;
+      }
+
+      function multiply(a, b) {
+        return a * b;
+      }
+
+      function divide(a, b) {
+        //예외처리
+        if (b === 0) {
+          return "0으로 나눌 수 없습니다";
+        }
+        return a / b;
+      }
+
+      // 계산 실행
+      const num1 = 10;
+      const num2 = 5;
+
+      console.log("=== 사칙연산 결과 ===");
+
+      // 덧셈
+      const 덧셈결과 = add(num1, num2); // 15가 나옴
+      console.log("10 + 5 = " + 덧셈결과);
+
+      // 뺄셈
+      const 뺄셈결과 = subtract(num1, num2); // 5가 나옴
+      console.log("10 - 5 = " + 뺄셈결과);
+
+      // 곱셈
+      const 곱셈결과 = multiply(num1, num2); // 50이 나옴
+      console.log("10 × 5 = " + 곱셈결과);
+
+      // 나눗셈
+      const 나눗셈결과 = divide(num1, num2); // 2가 나옴
+      console.log("10 ÷ 5 = " + 나눗셈결과);
+
+      // 0으로 나누기
+      const 에러결과 = divide(num1, 0); // "0으로 나눌 수 없습니다"가 나옴
+      console.log("10 ÷ 0 = " + 에러결과);
+    </script>
+  </body>
+</html>

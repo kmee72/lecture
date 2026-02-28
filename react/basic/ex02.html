@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ex02 -->
+    <title>순수 JS로 HTML요소 생성하기</title>
+  </head>
+  <body>
+    <p>순수 JS로 HTML요소 생성하기</p>
+    <div id="root"></div>
+    <script>
+      //<h1 class="greeting">Hello World!</h1>
+      const h1 = document.createElement("h1");
+      h1.className = "greeting";
+      h1.textContent = "Hello World!";
+      h1.style.color = "red";
+
+      document.getElementById("root").appendChild(h1);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>가로 스크롤 예제</title>
+    <style>
+      .container {
+        width: 300px;
+        border: 2px solid #333;
+        margin: 20px;
+        padding: 10px;
+      }
+
+      /* 인라인 블록 + 가로 스크롤 */
+      .horizontal-scroll {
+        overflow-x: auto;
+        white-space: nowrap;
+        background-color: lightblue;
+      }
+
+      .horizontal-scroll .item {
+        display: inline-block;
+        width: auto;
+        min-width: 100px;
+        padding: 20px;
+        margin: 10px;
+        background-color: white;
+        border: 1px solid #999;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>인라인 블록 + 가로 스크롤</h3>
+    <div class="container">
+      <div class="horizontal-scroll">
+        <div class="item">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
+          aliquid odio nostrum possimus nihil maxime dolor illo consequatur,
+          animi magnam consectetur eius, vel deleniti consequuntur cupiditate
+          saepe ullam maiores adipisci!
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

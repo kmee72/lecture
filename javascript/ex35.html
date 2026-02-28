@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex35 -->
+    <title>반복문의 중단, 우회</title>
+    <script>
+      // break문 : 반복문을 중단하고, 반복문의 끝에서 시작
+      // continue문 : 해당 회차(Loop)을 중단하고, 증감문으로 가서 시작
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+        if (i > 5) {
+          break;
+        }
+      }
+
+      for (let i = 0; i < 10; i++) {
+        if (i % 2 == 0) {
+          continue; //2의 배수이면 회차 중단.
+        }
+        console.log(i);
+      }
+
+      //연습문제
+      //문제1
+      //  랜덤수 1~100사이의 값을 1000번(for) 뽑는다.
+      //  그 랜덤수가 50보다 크면, 그 수를 출력하고 중단한다.(break)
+      //  출력예) 랜덤수 61
+      for (let i = 0; i < 1000; i++) {
+        let num = Math.floor(Math.random() * 100) + 1;
+        console.log("랜덤수", num);
+        if (num > 50) {
+          break;
+        }
+      }
+      //문제2
+      //  랜덤수 1~100사의 값을 1000번(for) 뽑는다.
+      //  그 랜덤수의 총합을 구하다가, 총합이 500을 넘어가면 중단한다.
+      //  몇 회차인지와 총합을 출력하시오.
+      //  출력예) 5회차, 총합 507
+      let sum = 0;
+      for (let i = 0; i < 1000; i++) {
+        let num = Math.floor(Math.random() * 100) + 1;
+        console.log("랜덤수", num);
+        sum = sum + num;
+        console.log("총합", sum);
+        if (sum > 500) {
+          console.log("회차", i + 1);
+          console.log("총합", sum);
+          break;
+        }
+      }
+      console.log(i);
+
+      let i = 0;
+      for (i = 0; i < 1000; i++) {}
+    </script>
+  </head>
+  <body></body>
+</html>

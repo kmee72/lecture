@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex09 -->
+    <title>형변환 - data type conversion</title>
+    <script>
+      // number -> string   String()함수
+      let num1 = 456;
+      console.log(typeof num1);
+      let str1 = String(num1);
+      console.log(typeof str1);
+
+      // string -> number   Number()함수, ParseInt(), ParseFloat()
+      let str2 = "123"; //문자열
+      let num2 = Number(str2);
+      console.log(typeof str2);
+      console.log(typeof num2);
+
+      //Number() : 정수 또는 실수로 변환.
+      //ParseInt() : 정수로 변환
+      //ParseFloat() : 실수로 변환
+      // 3.14 => 소숫점(실수)   3 => 정수(소숫점을 제거)
+      let str3 = 3.14;
+      let num3 = parseInt(str3); //소숫점 제거
+      console.log(num3);
+      let num4 = parseFloat(str3);
+      console.log(num4);
+
+      //*주의할 점 - 0123456789 +- 외의 문자를 넣으면 오류!
+      console.log(Number("가나다라")); //NaN : None a Number(숫자가 아닌 값)
+
+      //* 0으로 나누면 오류
+      console.log(10 / 0); //Infinity
+
+      // undefined에 연산을 할 때
+      console.log(undefined + 5); //NaN
+
+      // 비추천(야매)하는 형변환 문법
+      console.log("123" * 1 + 1);
+      console.log(+"123" + 1);
+    </script>
+  </head>
+  <body></body>
+</html>

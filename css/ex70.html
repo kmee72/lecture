@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex70 -->
+    <title>반응형웹 - 미디어쿼리 속성</title>
+    <!-- 반응형 웹이란? -->
+    <!-- 카페24 디자인센터 - 반응형 웹사이트 -->
+    <!--   : 화면너비에 따라서 반응하는 동적인 웹 -->
+    <!--   : 화면높이 - 세로 스크롤로 대응가능 -->
+
+    <!-- 해상도에 대응하는 방법 -->
+    <!-- 1. PC용만 만든다. 가로 1024px이상 고정 -->
+    <!-- 2. Mobile용만 만든다. 가로 768px이하 고정 -->
+    <!-- 3. 반응형으로 만든다. 모바일/태블릿/PC 대응 -->
+
+    <!-- 반응형 웹을 만드는 방법 -->
+    <!-- 1. PC웹과 Mobile웹을 별도로 제작 -->
+    <!--   예) 네이버(www.naver.com, m.naver.com) -->
+    <!-- 2. 반응형으로 제작 -->
+    <!--   예) 카페24 디자인센터, 아임웹, 크리에이터링크 -->
+
+    <!-- PC 화면너비 : 가로 960px 이상 -->
+    <!-- Tablet 화면너비 : 가로 768px 이상, 아이패드 기준 -->
+    <!-- Mobile 화면너비 : 가로 767px 이하  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* PC 해상도 */
+      @media screen and (min-width: 960px) {
+        body {
+          background-color: plum;
+        }
+      }
+      /* Tablet 해상도 */
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        body {
+          background-color: lightgreen;
+        }
+      }
+      /* Mobile 해상도 - 세로모드 */
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        body {
+          background-color: aqua;
+        }
+      }
+      /* Mobile 해상도 - 가로모드 */
+      @media screen and (max-width: 767px) and (orientation: landscape) {
+        body {
+          background-color: lightcoral;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>제목태그 H1</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sunt
+      obcaecati adipisci perspiciatis minus veniam recusandae consequuntur nemo,
+      ad iure! Impedit repellendus incidunt maxime perferendis maiores eveniet.
+      Id, praesentium architecto.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Et perferendis
+      cum, earum labore nulla tenetur eos ab iure pariatur! Repellendus quia
+      consectetur tenetur error ducimus cumque explicabo voluptatum magnam unde?
+    </p>
+  </body>
+</html>

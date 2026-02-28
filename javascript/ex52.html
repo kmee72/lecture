@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex52 -->
+    <script>
+      //함수 Function
+      //  : 기능 단위로 분리해 놓은 코드 뭉치
+      //  : 코드에 이름을 붙여 놓고, 호출(실행),
+      //     전달(함수형변수,익명함수) 할 수 있다.
+      //사용하는 이유
+      //1. 중복된 코드를 제거 할 수 있다.(반복문,함수,클래스)
+      //2. 코드뭉치에 이름을 붙여서 가독성 올릴 수 있다.(기존-코멘트보다는 낫다.)
+
+      //함수의 4가지 형식
+      //1. 매개변수(입력값) X, 반환값 X
+      //2. 매개변수(입력값) O, 반환값 X
+      //3. 매개변수(입력값) X, 반환값 O
+      //4. 매개변수(입력값) O, 반환값 O
+
+      //함수의 종료
+      //1. return문
+      //2. { } 블럭의 마지막에서 종료
+      //break문 -> 반복문,switch문 종료
+
+      //1. 매개변수(입력값) X, 반환값 X
+      //선언부 - 선언만 하고 실행되지 않음.
+      //호출부 - 위에서 선언되어 있지 않으면 실행안됨.
+      function myFunc1() {
+        console.log("myFunc1()");
+        return; //생략가능
+
+        console.log("1234");
+      }
+      myFunc1();
+      //2. 매개변수(입력값) O, 반환값 X
+      function myFunc2(param) {
+        console.log("파라미터:", param);
+        return;
+      }
+      myFunc2(10);
+      //3. 매개변수(입력값) X, 반환값 O
+      function myFunc3() {
+        return "홍길동";
+      }
+      //함수반환값을 받으려면 대입연산자 이용
+      let name = myFunc3();
+      console.log(name);
+      //4. 매개변수(입력값) O, 반환값 O
+      function myFunc4(param1, param2) {
+        //입력값 두개를 더한 값을 Output(결과값)으로 반환
+        return param1 + param2;
+      }
+      console.log(myFunc4(10, 20));
+
+      // 함수의 입력 : x값         3
+      // 함수의 본체 : x^2한다.    3*3=9
+      // 함수의 출력 : x^2값       9
+
+      function math(x) {
+        let result = x * x;
+        return result;
+      }
+      console.log(math(3));
+    </script>
+  </head>
+</html>

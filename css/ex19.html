@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex19 -->
+    <title>부정선택자 - not() 선택자</title>
+    <style>
+      /* 속성선택자 */
+      input[type="password"] {
+        background-color: red;
+      }
+      /* not선택자 : type이 password가 아닌 input태그 선택 */
+      input:not([type="password"]) {
+        background-color: blue;
+      }
+      /* body태그 후손중에 h1이 아닌 것들을 선택 */
+      body :not(h1) {
+        color: yellow;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" /><br />
+    <input type="password" /><br />
+    <input type="text" /><br />
+    <input type="password" /><br />
+    <h1>제목태그 H1</h1>
+    <p>문단태그 P</p>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex64 -->
+    <title>find, filter함수</title>
+    <script>
+      //find : 특정 값을 찾아낸다. 반환값은 특정값이나 undefined(못찾으면)
+      //filter : 필터, 특정요소를 걸러낸다. 반환값은 배열(or 빈배열)
+      //find함수
+      let nums = [10, 20, 30, 40, 50];
+      const foundVal = nums.find((item, index, arr) => {
+        //return item < 10; //false * 5  : 못찾으면 undefined값을 반환.
+        return item > 30; // F, F, F, T : 찾으면 그 값을 반환.
+      });
+      console.log(foundVal);
+
+      //filter함수
+      let arrFilterd = nums.filter((item, index, arr) => {
+        return 10 <= item && item <= 50;
+        //return item < 35; // 리턴이 T일때만 추가됨. [10, 20, 30]
+        //return item < 10; //모두 F일때는 빈 배열 []
+      });
+      console.log(arrFilterd);
+    </script>
+  </head>
+</html>

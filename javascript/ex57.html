@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex57.html -->
+    <script>
+      //괄호 정리
+      //소괄호 ( ) : 함수 function myfunc(){}, ()=>{} 조건문 if(){} switch(){}
+      //             반복문 for() while() do-while()
+      //중괄호 { } : 함수본체{}-코드의 시작과 끝, 조건문{},반복문{}
+      //             KV객체선언{}
+      //대괄호 [ ] : 배열 let arr=[10,20,30], arr[0],
+      //             KV객체 데이터참조 kv_obj['key']
+
+      //객체 - 자바(클래스->객체), JS(KV-객체, 배열)
+      //키-밸류(Key-Value) 객체
+      //  : key와 값의 쌍으로 이루어진 자료구조이다. 엄청 자주!
+      //  : key는 반드시 문자열형식, value는 다양한 타입 가능.
+
+      // HTTP통신 응답은 3가지 종류이다. html, json, xml, file, stream
+      // json데이터와 1:1 매칭해주는 데이터 구조가 kv객체이다.(자바 map)
+
+      // pc통신 프로토콜(HTTP(web), Socket(채팅,게임), 이메일, 파일전송, 원격접속 ...  )
+      // 프론트엔드(WB(html,js), app) <--http--> 백엔드(server)
+      //                                         html, json
+      //          JS KV 객체          <----json---
+      let kv_obj = {
+        apple: 1000,
+        banana: 2000,
+      };
+      console.log(kv_obj["apple"]);
+      console.log(kv_obj["banana"]);
+      console.log(kv_obj.apple);
+      console.log(kv_obj.banana);
+      //KV객체의 밸류(배열)에는 다양한 타입을 넣을 수 있다.
+      //익명함수(함수형변수)를 밸류로 넣어보자.
+      let person = {
+        name: "홍길동", //변수 - 속성
+        //action: function(){}
+        action: () => {
+          //메소드(함수) - 행동
+          console.log("액션 시작!");
+        },
+      };
+      console.log(person.name);
+      person.action();
+      console.log(person.action()); //함수의 반환값이 없음(void값) -log로 찍으면?
+      //undefined
+
+      //다양한 타입으로 객체를 선언
+      let toy = {
+        name: "마징가 피규어",
+        price: 1000,
+        lang: "한국어",
+        color: "white & black",
+      };
+      //KV객체 순회
+      //for in문 : key를 가져온다.
+      for (let key in toy) {
+        console.log(typeof key);
+        console.log(key);
+        console.log(toy[key]);
+      }
+      //for of문 : key,value 둘다 가져온다.
+      for (let [key, value] of Object.entries(toy)) {
+        console.log(key);
+        console.log(value);
+      }
+      //연습문제
+      // student KV객체를 선언하고,
+      // 이 학생의 국어, 영어, 수학 성적을 각각 70, 80,90으로 설정하고,
+      // 합산과 평균을 내는 익명함수를 각각 sum, avr로 설정하고,
+      // 익명함수를 통해, sum과 avr값을 출력하시오.
+      //그리고 국어,영어,수학 점수도 각각 출력하시오.
+      let student = {
+        kor: 70,
+        eng: 80,
+        math: 90,
+        sum: () => {
+          return student.kor + student.eng + student.math;
+        },
+        avr: function () {
+          //화살표함수 안에서는 this가 안됨(내부 메커니즘)
+          //일반함수(익명함수)에서는 this가 됨.
+          return this.sum() / 3;
+        },
+      };
+      console.log(student.kor);
+      console.log(student.eng);
+      console.log(student.math);
+      console.log(student.sum());
+      console.log(student.avr());
+    </script>
+  </head>
+</html>

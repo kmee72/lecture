@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex22 -->
+    <title>if문의 다양한 표현</title>
+    <script>
+      //1. 단일 if문
+      if (true) {
+        //참일때 수행문
+      }
+      //2. if else문
+      if (false) {
+        //참일때 수행문
+      } else {
+        //거짓일때 수행문
+      }
+      //3. if else if문
+      if (false) {
+        //조건1일 참일때
+      } else if (true) {
+        //조건1이 거짓이고, 조건2가 참일때
+      } else {
+        //조건1이 거짓이고, 조건2도 거짓일때
+      }
+      //4. if안에 if문(중첩if문) : 3번이상 if문으로 들어가지 말것.(난독성!)
+      //  솔루션: 함수로 코드를 분할하면 됨.
+      if (true) {
+        if (false) {
+          if (true) {
+          }
+        } else if (true) {
+        }
+      }
+
+      //깔끔한 코드 : Clean Code
+      //1. 변수,함수 이름을 잘 짓자. 가독성!
+      //2. 함수를 기능별로 잘 분리하자.
+      //3. 꼭 필요한 곳에는 코멘트 잘 달아 놓자.
+
+      //변수 이름짓는 법
+      //1. Camel Case : 단어와 단어 사이를 대문자로, 첫글자만 소문자.
+      //   사용처 : Java 언어 표준
+      //   예) userProfile
+      //2. Pascal Case : 첫글자부터 대문자.
+      //   예) UserProfile
+      //3. Snake Case : 언더바(_)로 연결
+      //   사용처) C/C++,
+      //   예) user_profile, USER_PROFILE
+      //4. Dash(kebab) Case : 코딩에서는 안되고, CSS나 파일(폴더)이름 지을때.
+      //   예) user-profile, USER-PROFILE
+      //5. 헝가리언 표기법 : 접두어에 데이터의 타입을 표기하는 방식.
+      //   타입 전환이 되면, 의미없음.
+      //   let nCount : number
+      //   let strName : string
+      //   let bVisible : boolean
+      //   let arrItems : array
+    </script>
+  </head>
+  <body></body>
+</html>

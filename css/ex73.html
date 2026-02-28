@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex73 -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습문제 - 반응형웹과 Flex연동</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 32px;
+        font-weight: bold;
+      }
+      .wrap {
+        display: flex;
+        flex-flow: row wrap;
+      }
+      .wrap > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /* PC */
+      .header {
+        background-color: lightgreen;
+        height: 100px;
+        /*    grow 1 - 1/N비율확대, basis 100% - 시작값이 100% */
+        flex: 1 100%;
+      }
+      .section1 {
+        background-color: #ffb3b3;
+        height: 200px;
+        flex: 1 50%;
+      }
+      .section2 {
+        background-color: #ffdcdc;
+        height: 200px;
+        flex: 1 50%;
+      }
+      .section3 {
+        background-color: #85e4eb;
+        height: 200px;
+        flex: 1 50%;
+      }
+      .section4 {
+        background-color: #b1e8ec;
+        height: 200px;
+        flex: 1 50%;
+      }
+      .ad {
+        background-color: #ecb3ff;
+        height: 100px;
+        flex: 1 50%;
+      }
+      .info {
+        background-color: #497c8d;
+        height: 100px;
+        flex: 1 50%;
+      }
+      .footer {
+        background-color: #b3ffd9;
+        height: 100px;
+        flex: 1 100%;
+      }
+      /* Tablet */
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        .header {
+          background-color: lightgreen;
+          height: 100px;
+          flex: 1 80%;
+          /* 첫번째 */
+          order: 0;
+        }
+        .ad {
+          background-color: #ecb3ff;
+          height: 100px;
+          flex: 1 20%;
+          order: 1;
+        }
+        .section1 {
+          background-color: #ffb3b3;
+          height: 100px;
+          flex: 1 100%;
+          order: 2;
+        }
+        .section2 {
+          background-color: #ffdcdc;
+          height: 100px;
+          flex: 1 100%;
+          order: 3;
+        }
+        .section3 {
+          background-color: #85e4eb;
+          height: 100px;
+          flex: 1 100%;
+          order: 4;
+        }
+        .section4 {
+          background-color: #b1e8ec;
+          height: 100px;
+          flex: 1 100%;
+          order: 5;
+        }
+        .info {
+          background-color: #497c8d;
+          height: 100px;
+          flex: 1 30%;
+          order: 6;
+        }
+        .footer {
+          background-color: #b3ffd9;
+          height: 100px;
+          flex: 1 70%;
+          order: 7;
+        }
+      }
+      /* Mobile */
+      @media screen and (max-width: 767px) {
+        .header {
+          background-color: lightgreen;
+          height: 100px;
+          flex: 1 100%;
+        }
+        .section1 {
+          background-color: #ffb3b3;
+          height: 200px;
+          flex: 1 50%;
+        }
+        .section2 {
+          background-color: #ffdcdc;
+          height: 200px;
+          flex: 1 50%;
+        }
+        .section3 {
+          background-color: #85e4eb;
+          height: 200px;
+          flex: 1 50%;
+        }
+        .section4 {
+          background-color: #b1e8ec;
+          height: 200px;
+          flex: 1 50%;
+        }
+        .ad {
+          background-color: #ecb3ff;
+          height: 100px;
+          flex: 1 30%;
+        }
+        .info {
+          background-color: #497c8d;
+          height: 100px;
+          flex: 1 70%;
+        }
+        .footer {
+          background-color: #b3ffd9;
+          height: 100px;
+          flex: 1 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header"><p>헤더</p></div>
+      <div class="section1"><p>섹션1</p></div>
+      <div class="section2"><p>섹션2</p></div>
+      <div class="section3"><p>섹션3</p></div>
+      <div class="section4"><p>섹션4</p></div>
+      <div class="ad"><p>광고</p></div>
+      <div class="info"><p>정보</p></div>
+      <div class="footer"><p>푸터</p></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>로그인</title>
+  </head>
+  <body>
+    <!-- form태그는 GET/POST메소드만 지원 -->
+    <form action="#">
+      <input type="text" name="username" value="" /> <br />
+      <input type="text" name="password" value="" /> <br />
+      <button type="button" onclick="onLogin()">로그인</button>
+    </form>
+
+    <p id="result_status">응답상태:</p>
+    <p id="result_message">메시지:</p>
+
+    <script>
+      //js의 fetch함수를 통해 Rest API 자체서버에 통신을 날린다.
+      //js가 실행되는 곳은 프론트(웹브라우저)이다.
+      function onLogin() {
+        const arrayUsername = document.getElementsByName("username");
+        const arrayPassword = document.getElementsByName("password");
+        if (!arrayUsername[0].value) {
+          //유효성체크( null, empty, undefined, NaN )
+          alert("아이디를 입력하세요.");
+          return;
+        }
+        if (!arrayPassword[0].value) {
+          //유효성체크( null, empty, undefined, NaN )
+          alert("암호를 입력하세요.");
+          return;
+        }
+        // "/api/v1/login" 이렇게만 호출안됨. 전체경로로 호출해야 됨.
+        fetch("http://localhost:8080/api/v1/loginDto", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          //JSON.stringify() : JS KV객체를 JSON형태의 문자열로 바꿔주는 함수.
+          body: JSON.stringify({
+            username: arrayUsername[0].value,
+            password: arrayPassword[0].value,
+          }),
+        })
+          .then((response) => {
+            //Promise-then패턴, HTTP통신응답 객체
+            console.log(response);
+            return response.json();
+          })
+          .then((json) => {
+            // { status: "ok", message: "로그인되었습니다." }
+            console.log(json);
+            // 응답메시지 표시하기
+            document.getElementById("result_status").innerText = json.status;
+            document.getElementById("result_message").innerText = json.message;
+          }) //Body의 JSON객체
+          .catch((error) => {
+            console.log(error);
+          }); //예외처리
+      }
+    </script>
+  </body>
+</html>

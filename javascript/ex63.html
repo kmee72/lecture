@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex63 -->
+    <script>
+      // 연습문제
+      //1번
+      const users = [
+        { id: 1, name: "Alice", age: 25 },
+        { id: 2, name: "Bob", age: 30 },
+        { id: 3, name: "Charlie", age: 35 },
+      ];
+      // 각 사용자의 이름만 추출한 배열을 생성하세요.map()함수.
+      // 출력결과 :  ["Alice", "Bob", "Charlie"]
+      const names = users.map((user) => {
+        return user.name;
+      });
+      //화살표함수에서 본문이 한 줄이면, return,중괄호,세미콜론 생략가능.
+      //               매개변수가 하나이면, 소괄호 생략가능
+      //prettier-ignore
+      const names2 = users.map(user => user.name);
+      console.log("names2", names2);
+
+      //2번
+      const prices = [100, 200, 300];
+      // 각 가격에 10%의 세금을 추가한 배열을 생성하세요.map()함수.
+      // 출력결과 : [110, 220, 330]
+      const pricesTax = prices.map((price) => {
+        return Math.floor(price * 1.1);
+      });
+      console.log(pricesTax);
+
+      //3번
+      const matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+      // 각 숫자를 제곱한 1차원 배열을 만드세요.
+      //출력결과 : [1, 4, 9, 16, 25, 36, 49, 64, 81]
+      //힌트 : reduce, map함수 사용하기, flat()함수 배열평탄화(2배열->1차배열로)
+      let squared = matrix.map((row) => {
+        let arr = row.map((num) => {
+          return num * num;
+        });
+        return arr;
+      });
+      console.log(squared); //[[1, 4, 9], [16, 25, 36], [49, 64, 81]]
+
+      //reduce함수로 평탄화
+      const result = squared.reduce((acc, cur) => {
+        return acc.concat(cur);
+      }, []);
+      console.log(result);
+
+      //flat함수 - 평탄화함수
+      let squared2 = matrix
+        .map((row) => {
+          return row.map((num) => {
+            return num * num;
+          });
+        })
+        .flat();
+      console.log(squared2);
+
+      //4번
+      const orders = [
+        { id: 1, items: [10, 20, 30] },
+        { id: 2, items: [5, 15] },
+        { id: 3, items: [100, 200] },
+      ];
+      // 각 주문의 ID와 총액(total)을 포함하는 배열을 만드세요.
+      // map함수 안에서 reduce함수 사용하는 문제.
+      //출력결과 : [{ id: 1, total: 60 }, { id: 2, total: 20 }, { id: 3, total: 300 }]
+
+      //reduce 문을 사용한 연습문제
+      //5번
+      const nums = [10, 20, 30, 40, 50];
+      //reduce 함수를 이용하여, 35보다 큰 숫자의 갯수를 출력하시오.
+      // 출력예) 2
+
+      //6번
+      //2.reduce 함수+전개연산자(push)를 이용하여, 배열의 문자열 길이를 구하시오.
+      //  map,foreach 사용가능
+      const strings = ["hong", "lee", "imdan"];
+      //출력예) [4,3,5]
+    </script>
+  </head>
+</html>

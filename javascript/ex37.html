@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex37 -->
+    <title>이중 반복문</title>
+    <script>
+      // 이중반복문 : 반복문 안에 반복문이 들어가는 것.
+      for (let i = 0; i < 5; i++) {
+        console.log("i", i);
+        for (let j = 0; j < 5; j++) {
+          console.log("  j", j);
+        }
+      }
+
+      //구구단 출력하기
+      for (let i = 2; i <= 9; i++) {
+        for (let j = 1; j <= 9; j++) {
+          console.log(i + "*" + j + "=" + i * j);
+        }
+      }
+      //시간을 분단위 출력하기
+      for (let i = 1; i < 25; i++) {
+        for (let j = 1; j <= 60; j++) {
+          console.log(i + ":" + j);
+        }
+      }
+
+      //이중반복문에서 break,continue 사용하기
+      //반복문을 구분하기 위해 레이블을 쓴다.
+      loop1: for (let i = 2; i <= 9; i++) {
+        loop2: for (let j = 1; j <= 9; j++) {
+          console.log(i + "*" + j + "=" + i * j);
+          if (j > 5) {
+            continue loop1;
+          }
+          if (j > 3) {
+            break loop2;
+          }
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

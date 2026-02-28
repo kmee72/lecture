@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex40 -->
+    <title>연습문제</title>
+    <script>
+      // while문으로 풀어주세요
+      // 문제1
+      //   1부터 100까지의 정수 중에서
+      //   2의 배수이면서, 3의 배수인 수를 모두 출력하시오.
+      let i = 1;
+      while (i <= 100) {
+        if (i % 2 == 0 && i % 3 == 0) {
+          console.log("2의배수이면서 3의 배수", i);
+        }
+        i++;
+      }
+
+      // 문제2 - 소수판별
+      //   1부터 100사이의 정수 중에서
+      //   소수인 숫자만 출력하시오.
+      //   소수란? 1과 자신으로만 나누어 떨어지는 수
+      //   예)2,3,5,7,11,13...
+      i = 1;
+      while (i <= 100) {
+        let yaksu = 0;
+        let j = 1;
+        while (j <= i) {
+          if (i % j == 0) {
+            yaksu++;
+          }
+          j++;
+        }
+        if (yaksu == 2) {
+          console.log("소수입니다.", i);
+        }
+        i++;
+      }
+
+      //   소수 판별 로직
+      //   1부터 그 수(N)까지 나눠서, 나누어 떨어지는 수의 합계가 2이면
+      //   소수이다.
+      // let 약수갯수 = 0;
+      // for (let i = 1; i <= 3; i++) {
+      //   if (3 % i == 0) {
+      //     약수갯수++;
+      //   }
+      // }
+      // if (약수갯수 == 2) {
+      //   console.log("소수입니다.");
+      // }
+
+      // 문제3 - 행운의 로또번호(배열 사용)
+      //   1~45까지의 랜덤한 정수 6개를 뽑아서, 로또번호로 만드시오.
+      //   단 이미 추첨된 번호가 나오면, 다시 추첨하시오.
+      //   continue문을 이용한 재추첨 로직이 필요함.
+      let lotto_nums = [];
+      i = 0;
+      loop1: while (i < 6) {
+        let lotto = Math.floor(Math.random() * 45) + 1;
+        //이미 추첨한 번호인가 판별
+        for (let j = 0; j < i; j++) {
+          // 추첨된 로또번호와 방금 추첨된 로또번호와 같은가?
+          if (lotto_nums[j] == lotto) {
+            console.log("중복된 수입니다.", lotto);
+            continue loop1; //해당회차를 중단하고, 증감문(조건식)으로 간다.
+          }
+        }
+        //중복되지 않는 수를 배열에 넣는다.
+        lotto_nums.push(lotto);
+        i++;
+      }
+      console.log(lotto_nums);
+    </script>
+  </head>
+  <body></body>
+</html>

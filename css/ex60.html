@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex60.html -->
+    <title>z-index 아이템의 높낮이 정하기</title>
+    <style>
+      .container {
+        width: 90%;
+        height: auto;
+        background-color: yellow;
+        border: 10px solid black;
+        padding: 10px;
+        display: flex;
+
+        /* 아이템 간의 간격(flex에서 사용함) */
+        gap: 10px;
+      }
+      .item {
+        width: auto;
+        height: 100%;
+        border: 10px solid black;
+        padding: 10px;
+        background-color: aquamarine;
+      }
+      .item:nth-child(1) {
+        /* 기본값 */
+        z-index: 0;
+      }
+      .item:nth-child(2) {
+        z-index: 2;
+        /* 변형속성 : 확대축소비율 1.5배 */
+        transform: scale(2);
+        /* 투명도: 1 불투명 0 완전투명(유리) */
+        opacity: 0.5;
+      }
+      .item:nth-child(3) {
+        z-index: 1;
+        background-color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>z-index</h1>
+    <div class="container">
+      <!-- (div.item>h3)*3 -->
+      <div class="item">
+        <h3>AAA</h3>
+      </div>
+      <div class="item">
+        <h3>BBB</h3>
+      </div>
+      <div class="item">
+        <h3>CCC</h3>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex64 -->
+    <title>가상요소 사용예3</title>
+    <!-- 연습문제로 풀어보세요~ -->
+    <!-- 다음 로그인화면의 가로 구분선 만들기 -->
+    <style>
+      .container {
+        width: 300px;
+        /* border: 1px solid #555; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      /* 버튼 선택시 : 타입선택자, nth-child, id,class추가 */
+      input[type="submit"] {
+        width: 100%;
+        height: 40px;
+        background: #fee500;
+        border: none;
+        border-radius: 5px;
+      }
+      input[type="button"] {
+        width: 100%;
+        height: 40px;
+        background: #eee;
+        border: none;
+        border-radius: 5px;
+      }
+      p {
+        font-size: 12px;
+        color: #888;
+      }
+
+      /* absolute : 부모태그의 w,h가 변경되면 안됨. 
+         flex
+         inline-block */
+      p::before {
+        /* span박스가 가상으로 생성된다. */
+        /* width,height 0으로 생성 */
+        content: "";
+        display: inline-block;
+
+        width: 120px;
+        height: 1px;
+        border-bottom: 1px solid #888;
+        margin-bottom: 4px;
+        margin-right: 10px;
+      }
+      p::after {
+        content: "";
+        display: inline-block;
+
+        width: 120px;
+        height: 1px;
+        border-bottom: 1px solid #888;
+        margin-bottom: 4px;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="submit" value="로그인" />
+      <p class="line">또는</p>
+      <input type="button" value="QR코드 로그인" />
+    </div>
+  </body>
+</html>

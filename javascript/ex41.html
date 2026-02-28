@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex41 -->
+    <title>무한루프</title>
+    <script>
+      // 무한루프 만드는 법
+      // 이벤트를 대기하고 있다가 처리하기 위해서 사용한다.
+      //1. for(;;)
+      //2. while(true)
+      // let count = 0;
+      // for (;;) {
+      //   console.log(count++);
+      //   if (count > 100) {
+      //     break;
+      //   }
+      // }
+
+      // count = 0;
+      // while (true) {
+      //   console.log(count++);
+      //   if (count > 100) {
+      //     break;
+      //   }
+      // }
+
+      //연습문제
+      //문제1
+      //  주사위 1개를 무한히 던져서, 숫자 5가 나오면 중단(break)하고
+      //  그 숫자(5)를 출력하시오.
+      while (true) {
+        let num = Math.floor(Math.random() * 6) + 1;
+        console.log(num);
+        if (num == 5) {
+          console.log("중단수:", num);
+          break;
+        }
+      }
+      //문제2
+      //  철수는 승부욕이 강해서, 이길때까지 주사위를 던지는 얘다.
+      //  철수와 영희가 주사위를 1번씩 번갈아 던지면서,
+      //  승자와 패자와 무승부를 출력하고,
+      //  철수가 승리하면 게임을 멈추는 코드를 작성하시오.
+      while (true) {
+        let num_c = Math.floor(Math.random() * 6) + 1;
+        let num_y = Math.floor(Math.random() * 6) + 1;
+        console.log("철수:", num_c);
+        console.log("영희:", num_y);
+        if (num_c > num_y) {
+          console.log("철수 승");
+          break;
+        } else if (num_c < num_y) {
+          console.log("영희 승");
+        } else {
+          console.log("무승부");
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

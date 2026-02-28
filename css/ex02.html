@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex02.html -->
+    <title>CSS 적용하는 방법 3가지</title>
+    <!-- 방법1 : head태그 안에 style태그 안에(기본) -->
+    <!-- 방법2 : 인라인 스타일, 태그 안에 style속성으로(인스턴트) -->
+    <!-- 방법3 : 확장자 .css 파일로 만들어서 추가(임포트)(대용량) -->
+    <style>
+      /* css안의 주석문 */
+      /* h1 : h1태그를 선택 */
+      /* { } : css속성을 넣을 때 블럭(영역) */
+      /* color : css속성(글자색-전경색) */
+      /* :콜론 : 속성과 값의 구분자 */
+      /* ;세미콜론 : 속성 1개의 마침표 */
+      h1 {
+        color: red;
+      }
+    </style>
+    <!-- link태그 : 외부파일(css,js)을 임포트할 때 -->
+    <!-- rel속성 : 외부파일 형식 -->
+    <!-- href속성 : 외부파일 이름 -->
+    <link rel="stylesheet" href="mycss.css" />
+  </head>
+  <body>
+    <h1>제목태그 H1입니다.</h1>
+    <h2 style="color: blue">제목태그 H2입니다.</h2>
+    <h3>제목태그 h3입니다.</h3>
+  </body>
+</html>

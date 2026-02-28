@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex52.html -->
+    <title>내맘대로 정렬 - align-self 속성</title>
+    <!-- 교차축에서만 되는 기능 -->
+    <!-- 부모의 정렬속성을 무시하고 스스로 정렬되는 속성 -->
+    <style>
+      .container {
+        display: flex;
+        /* flex-flow: row nowrap; */
+        /* 기본값 */
+        flex-direction: row;
+        /* 기본값 */
+        justify-content: flex-start;
+        /* 기본값 */
+        align-items: stretch;
+
+        width: 100%;
+        height: 150px;
+        background: #eee;
+        border: 1px solid #222;
+        margin-bottom: 10px;
+      }
+      .item {
+        padding: 5px 45px;
+        margin: 5px;
+        background: green;
+      }
+      p {
+        color: white;
+        text-align: center;
+      }
+      .box1 {
+        /* 기본값 */
+        align-self: stretch;
+      }
+      .box2 {
+        align-self: flex-start;
+      }
+      .box3 {
+        align-self: flex-end;
+      }
+      .box4 {
+        align-self: center;
+      }
+      .box5 {
+        align-self: baseline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- emmet문법 -->
+    <!-- div.container>div.item.box$*5>p{$} -->
+    <div class="container">
+      <div class="item box1">
+        <p>1</p>
+      </div>
+      <div class="item box2">
+        <p>2</p>
+      </div>
+      <div class="item box3">
+        <p>3</p>
+      </div>
+      <div class="item box4">
+        <p>4</p>
+      </div>
+      <div class="item box5">
+        <h1>5</h1>
+      </div>
+    </div>
+  </body>
+</html>

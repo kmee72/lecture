@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- pr33 -->
+    <script>
+      //역순으로 그 숫자들을 하나씩 출력
+      // 입력 : 1 2 3 4 5
+      // 출력 : 5 4 3 2 1
+      // 입력 : 2 4 6 7 8
+      // 출력 : 8 7 6 4 2
+      let input = "1 2 3 4 5";
+      let arr = input.split(" ");
+      //1. reverse() : 정렬! 역순으로 뒤집기이다.
+      //              : 역순정렬 sort().reverse()해야됨.
+      let arr_reverse = arr.reverse();
+      console.log(arr_reverse);
+      console.log(arr_reverse.join(" "));
+
+      let str = "";
+      for (let i = 0; i < arr_reverse.length; i++) {
+        str += arr_reverse[i] + " ";
+      }
+      console.log(str);
+
+      //2. 역순정렬
+      let input2 = "1 2 3 4 5";
+      let arr2 = input.split(" ");
+      let str2 = "";
+      for (let i = arr2.length - 1; i >= 0; i--) {
+        str2 += arr2[i] + " ";
+      }
+      console.log("역순정렬", str2);
+
+      //join()함수
+      let arr_str = ["떡볶기", "오뎅", "튀김"];
+      let arr_nums = [10, 20, 30];
+      console.log(arr_str.join(","));
+      console.log(arr_nums.join(","));
+    </script>
+  </head>
+</html>

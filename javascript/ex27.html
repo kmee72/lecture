@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex27 -->
+    <title>연습문제</title>
+    <script>
+      // 철수아버지가 아들을 위해서 로봇장난감을 만들었다.
+      // 동작코드가 랜덤하게 발생한다.
+      // 동작코드 0이면, "로봇이 춤을 춘다."을 출력하고,
+      //          1이면, "로봇이 노래를 부른다."
+      //          2이면, "로봇이 걸어간다."
+      //          3이면, "로봇이 전원이 꺼진다." 출력하시오.
+      let op_code = Math.floor(Math.random() * 4);
+      switch (op_code) {
+        case 0:
+          console.log("춤을 춘다.");
+          break;
+        case 1:
+          console.log("노래를 부른다.");
+          break;
+        case 2:
+          console.log("걸어간다.");
+          break;
+        case 3:
+          console.log("전원이 꺼진다.");
+          break;
+        default: //생략가능
+          console.log("동작불가 코드입니다.");
+          break;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ex113.html -->
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>레스토랑 예약하기</h3>
+    <form action="">
+      <fieldset>
+        <legend>예약자 정보</legend>
+        <label for="name">예약자:</label>
+        <input type="text" id="name" />
+        <br />
+        <label
+          >예약자:
+          <input type="text" />
+        </label>
+        <br />
+        <!-- mobile 숫자키패드 -->
+        연락처: <input type="tel" placeholder="000-0000-0000" />
+        <br />
+        예약인원:
+        <select>
+          <option value="2">2명</option>
+          <option value="3">3명</option>
+          <option value="4">4명</option>
+          <option value="5">5인 이상</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>일자 선택 및 시간 선택</legend>
+        <input type="datetime-local" />
+      </fieldset>
+
+      <!-- 통신함 -->
+      <input type="submit" value="예약" />
+      <!-- 통신안함  -->
+      <input type="button" value="취소" />
+      <!-- 통신함 -->
+      <button>예약</button>
+      <button type="submit">예약</button>
+      <!-- 통신안함 -->
+      <button type="button">취소</button>
+    </form>
+  </body>
+</html>

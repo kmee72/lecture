@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex05 -->
+    <title>사용자로부터 입력받기 - prompt/confirm함수</title>
+    <script>
+      // = 등호연산자는 오른쪽 항부터 연산함.
+      // prompt함수(창)이 먼저 실행되고,
+      // 변수 name에 저장된다.
+      let name = prompt("이름을 입력하세요.");
+      // 변수 name에 저장된 문자열이 +연산되고,
+      // log함수에 출력된다.
+      console.log("입력된 이름은 " + name);
+      // 2개의 문자열 데이터를 각각 출력한다.
+      console.log("입력된 이름은 ", name);
+
+      let choice = confirm("파일 전송할까요?");
+      // 확인은 true, 취소는 false 값으로 전송된다.
+      console.log("사용자의 선택은", choice);
+    </script>
+  </head>
+  <body></body>
+</html>

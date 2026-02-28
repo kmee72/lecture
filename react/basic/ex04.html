@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ex04 -->
+    <title>JSX를 이용한 html요소 생성하기</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- JSX문법을 JS로 변환해주는 바벨(Babel.js) -->
+    <!-- min.js : 소스용량을 줄이기 위해 공백,줄바꿈을 제거한 js -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <p>JSX를 이용한 html요소 생성하기(클래스형)</p>
+    <div id="root"></div>
+    <!-- 바벨이 번역하는 스크립트임을 알려줌. -->
+    <script type="text/babel">
+      //리액트 클래스형 컴퍼넌트 정의
+      class Greeting extends React.Component {
+        //React.Component에 정의된 함수 : 함수 오버라이딩
+        render() {
+          return (
+            //JSX문법을 사용한다.
+            <h1 className="greeting">Hello World!</h1>
+          );
+        }
+      }
+      //리액트 함수형 컴퍼넌트 정의
+      const Greeting2 = <h1 className="greeting">Hello World2~</h1>;
+      //const Greeting2 : JSX.Element
+
+      //ReactDOM을 이용하여 컴퍼넌트를 root에 렌더링한다.
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      //클래스형 컴퍼넌트 렌더링
+      // root.render(React.createElement(Greeting));
+      //함수형
+      root.render(Greeting2);
+    </script>
+  </body>
+</html>

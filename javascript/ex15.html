@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex15 -->
+    <title>연습문제</title>
+    <script>
+      // 문제1
+      // 사용자로부터 1~100 중의 숫자중에서 2개의 정수를 입력받고,
+      // 사칙연산과 나머지연산을 수행하시오.
+      // 단, 첫번째수는 두번째 수보다 큰 수를 입력하시오.
+      let num1 = prompt("첫번째 숫자");
+      let num2 = prompt("두번째 숫자");
+      // + - * / %
+      //몫에 대해서는 정수값으로 출력하시오.
+      // num1은 string타입 => number타입으로 변환
+
+      //한번쓰고 버리는 값 : 인스턴스 타입
+      console.log(Number(num1) + Number(num2));
+      console.log(Number(num1) - Number(num2));
+      console.log(Number(num1) * Number(num2));
+
+      //변환된 값을 변수에 저장하고 계속 사용하는 방법.
+      num1_ = Number(num1);
+      num2_ = Number(num2);
+      console.log(num1_ + num2_);
+      console.log(num1_ - num2_);
+      console.log(num1_ * num2_);
+      console.log(Math.floor(num1 / num2_));
+      console.log(num1_ % num2_);
+    </script>
+  </head>
+  <body></body>
+</html>

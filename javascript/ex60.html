@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex60 -->
+    <!-- JS 중급문법 : ES6버전이상 - 리액트.js(생성형AI) -->
+    <!-- 최신 트렌드 문법을 구사해야 AI 코드를 이해가능! -->
+    <!-- 구조분해할당과 전개연산자 -->
+    <!-- 쪼갠다         나열한다 -->
+    <!-- Destructuring Assignment -->
+    <!-- Spread Operator -->
+    <script>
+      // 배열의 구조분해(할당)
+      let array1 = [10, 20, 30];
+      let a = array1[0];
+      let b = array1[1];
+      let c = array1[2]; //이 과정을 간단하게 해보자.
+
+      [a, b, c] = [10, 20, 30];
+      console.log(a);
+      console.log(b);
+      console.log(c);
+
+      let [d] = [10, 20, 30];
+      console.log(d);
+      let [, , e] = [10, 20, 30];
+      console.log(e);
+
+      // 객체의 구조분해(할당)
+      let obj = {
+        apple: 1000, //객체에는 인덱스(순번)이 없음.
+        banana: 2000,
+      };
+
+      //객체의 key와 변수이름을 매칭해줘야 됨.
+      let { apple, banana } = obj;
+      console.log(apple);
+      console.log(banana);
+
+      //새로운 이름으로 할당하기
+      let { apple: fruit1, banana: fruit2 } = obj;
+      console.log(fruit1);
+      console.log(fruit2);
+
+      //일부만 할당하기
+      let { apple: newFruit } = obj;
+      console.log(newFruit);
+
+      // 배열의 전개연산자(...)
+      let [i, j, ...rest] = [10, 20, 30, 40, 50];
+      console.log(i);
+      console.log(j);
+      console.log(rest); //나머지 [30,40,50]
+
+      //값의 치환(교환)
+      let aa = 10;
+      let bb = 20;
+      // let temp = aa;
+      // aa == bb;
+      // bb = temp;
+
+      [bb, aa] = [aa, bb];
+      console.log(aa);
+      console.log(bb);
+
+      // 객체의 전개연산자
+      let pet = {
+        cat: 1000,
+        dog: 2000,
+        pig: 3000,
+      };
+      let ball = {
+        baseball: 1000,
+        soccor: 2000,
+        basketball: 3000,
+      };
+      let favorit = {
+        ...pet,
+        ...ball,
+      };
+      console.log(favorit);
+
+      //기본값 설정
+      let [n = 5, m = 7] = [1];
+      console.log(n, m); //1, 7
+      let { baseball = 4000, pigu = 5000 } = ball;
+      console.log(baseball, pigu);
+
+      //함수의 결과값으로 구조분해할당
+      function foo() {
+        return [10, 20];
+      }
+      [n, m] = foo();
+      console.log(n, m);
+    </script>
+  </head>
+</html>

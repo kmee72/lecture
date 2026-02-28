@@ -1,0 +1,47 @@
+.wrapper {
+  margin: 0 auto;
+  width: 300px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.input-box {
+  width: 200px;
+}
+.border {
+  /* border: 1px solid red; */
+}
+.label {
+  width: 70px;
+}
+.input {
+  width: 130px;
+  font-weight: bold;
+  text-align: center;
+}
+.input-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.button {
+  width: 200px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 12px;
+}
+.blue {
+  background-color: blue;
+}
+.red {
+  background-color: red;
+}

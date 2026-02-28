@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>재귀함수 예제</title>
+    <script>
+      //1. 팩토리얼 구하기
+      //  5! = 5*4*3*2*1 = 120
+
+      //solution1 단순반복문
+      let result = 1; //곱셈의 초기값 1(0으로 하면 안됨.)
+      //1부터 n까지 반복하여 곱한다.
+      for (let i = 1; i <= 5; i++) {
+        result *= i;
+      }
+      console.log(result);
+
+      //solution2 재귀함수
+      function factorial(n) {
+        if (n == 1) {
+          return 1;
+        }
+        return n * factorial(n - 1);
+      }
+      result = factorial(5);
+      console.log(result);
+
+      //2. 1부터 n까지의 합
+      function sum(n) {
+        if (n == 1) {
+          return 1;
+        }
+        return n + sum(n - 1);
+      }
+      console.log(sum(5)); //5+4+3+2+1 = 15
+
+      //3. 십진수를 이진수로 변환
+      function getBin(n) {
+        if (n < 2) {
+          return String(n);
+        } else {
+          return getBin(Math.floor(n / 2)) + String(n % 2);
+        }
+      }
+      console.log(getBin(10)); //10의 이진수는 "1010"
+
+      //10진수 : 10이 되면 자릿수 증가(아라비아숫자는 0~9) 열개를 표현?
+      //         1,2,3,...,9, 열개(10) 11 12.... 99 100
+      //2진수 : 2가 되는 자릿수 증가
+      //         0, 1, 10(2), 11, 100(4), 101, 110, 111, 1000, ... 1010(10)
+      //8진수 : 8이 되면 자릿수 증가
+      //         0, 1, 2, 3, ... 7, 10(8)
+      //16진수 : 16이 되면 자릿수 증가
+      //         0, 1, 2, 3, ... 9, a(10),b(11),...f(15),10(16)
+
+      //4. 문자열 역순 변환(reverse())
+      function getReverse(str) {
+        if (str.length === 0) {
+          return "";
+        } else {
+          return getReverse(str.substring(1)) + str.charAt(0);
+        }
+      }
+      console.log(getReverse("abcde")); //"edcba"
+
+      //5. 피보나치 수열을 10개를 출력하시오.
+      // 피보나치 수열은 앞의 두 수를 더해서 다음 수를 만드는 수열
+      // 0 1 1 2 3 5 8 12 20
+      // f(0) = 0
+      // f(1) = 1
+      // f(n) = f(n-1) + f(n-2) (단,n>1)
+      function fibonacci(n) {
+        if (n <= 1) {
+          return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+      }
+      for (let i = 0; i < 10; i++) {
+        console.log(fibonacci(i));
+      }
+    </script>
+  </head>
+</html>

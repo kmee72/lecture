@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex26 -->
+    <title>연습문제</title>
+    <script>
+      // 문제1
+      // 담임선생님이 영희의 영어점수를 채점하고 있다.
+      // 영어 점수는 0~100점이다.(랜덤 정수 발생!)
+      // 영희의 영어 점수가 90점 이상이면, "A등급"이라고 출력하고,
+      // 80점 이상이면,"B등급"
+      // 70점 이상이면,"C등급"
+      // 69점 이하이면,"D등급"이라고 출력한다.
+      let engScore = Math.floor(Math.random() * 101); //0~100사이
+      console.log(engScore);
+      switch (Math.floor(engScore / 10)) {
+        case 10:
+        //break;생략하면, pass가 됨.
+        case 9:
+          console.log("A등급");
+          break;
+        case 8:
+          console.log("B등급");
+          break;
+        case 7:
+          console.log("C등급");
+          break;
+        default:
+          console.log("D등급");
+          break;
+      }
+
+      switch (true) {
+        case engScore >= 90:
+          console.log("A등급");
+          break;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

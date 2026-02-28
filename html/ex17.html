@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>입력태그 : form태그</title>
+    <!-- 로그인, 회원가입 페이지에 주로 사용 -->
+    <!-- 프론트엔드(웹브라우저)에서 서버(백엔드)로 정보 전송 방법 -->
+    <!-- 1. form태그로 -->
+    <!-- 2. 자바스크립트로 -->
+  </head>
+  <body>
+    <!-- action속성: 서버주소를 넣는다. -->
+    <form action="http://www.naver.com"></form>
+    <!-- localhost : 내PC주소을 의미하는 예약어 -->
+    <!-- 8080: port(포트)이름 - 프로그램 구분자 -->
+    <!-- method: 통신방식 get/post -->
+    <form action="localhost:8080" method="get">
+      <!-- input태그 : 사용자의 입력을 받는 태그 -->
+      <!-- type속성 : text 형식의 입력받음. -->
+      아이디 : <input type="text" /><br />
+      비밀번호 : <input type="password" /> <br />
+      파일업로드 : <input type="file" /> <br />
+      제출하기 : <input type="submit" />
+    </form>
+  </body>
+</html>

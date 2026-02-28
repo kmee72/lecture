@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex53.html -->
+    <title>flex-basis속성</title>
+    <!-- flex-basis란 아이템이 늘어나거나 줄어들기(X축) 전의 초기 크기 -->
+    <!-- auto : 기본값, W,H값을 참고하거나 콘텐츠의 크기만큼 -->
+    <!-- content : 콘텐츠의 크기만큼 -->
+    <!-- 0 : 아이템의 초기 크기값을 0으로 간주함. flow-grow 비율로 채워짐. -->
+    <!-- 단위(px, %, em) : 특정 수치로 고정된 크기로 지정 -->
+    <style>
+      .container {
+        width: 90%;
+        height: auto;
+        background: yellow;
+        border: 10px solid black;
+        padding: 10px;
+        display: flex;
+      }
+      .item {
+        /* 콘텐츠의 너비만큼 */
+        width: auto;
+        height: 100%;
+        margin: 10px;
+        border: 10px solid black;
+        background: lightgreen;
+
+        /* 늘어나거나 줄어들기 전의 기준 크기 */
+        /* flex-basis: auto;
+        width: 100px; */
+
+        /* flex-basis: content; */
+        /* 만약 width와 flex-basis가 함께 둘다 선언되면, */
+        /* 우선순위 flex-basis가 더 높다. */
+        /* width: 100px; */
+
+        flex-basis: 100px;
+        /* width: 100px; */
+
+        /* flex-grow가 정해준 비율대로 공간을 차지함. */
+        /* flex-basis: 0;
+        flex-grow: 1; */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flex-basis</h1>
+    <!-- div.container>(div.item>h3)*3 -->
+    <div class="container">
+      <div class="item">
+        <h3>AAA</h3>
+      </div>
+      <div class="item">
+        <h3>BBBBBBBBBBBBBB</h3>
+      </div>
+      <div class="item">
+        <h3>CCC</h3>
+      </div>
+    </div>
+  </body>
+</html>

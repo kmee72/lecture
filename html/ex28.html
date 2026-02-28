@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex28.html -->
+    <title>시멘틱태그 - inline-block사용</title>
+    <style>
+      body { 
+        /* 마진 : html요소 간의 간격 */
+        margin: 0; 
+        /* 패딩 : 테두리선과 내용(content) 간의 간격 */
+        padding: 0;
+        /* 테두리선 두께 실선 색상 */
+        border: 1px solid red; 
+      }
+      header {
+        border: 1px solid red;
+      }
+      nav {
+        border: 1px solid blue;
+      }
+      main {
+        border: 1px solid orange;
+      }
+      aside {
+        /* display: block  한줄 차지(줄바꿈됨)
+                    inline 한칸(내용물) 차지(줄바꿈안됨) - 간단한 텍스트만 입력가능
+                    inline-block inline동일(width,height 적용가능)
+                    */
+        display: inline-block;
+        /* width 넓이 : 28% 자신이 확보할 수 있는 공간의 28% */
+        width: 28%;
+        border: 1px solid skyblue;
+      }
+      section {
+        display: inline-block;
+        width: 70%;
+        border: 1px solid purple;
+      }
+      footer {
+        border: 1px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>헤더영역</h1></header>
+    <nav>
+      <ul>
+        <li><a href="#">메뉴1</a></li>
+        <li><a href="#">메뉴2</a></li>
+        <li><a href="#">메뉴3</a></li>
+      </ul>
+    </nav>
+    <main>
+      <aside>
+        <ul>
+          <li><a href="#">사이드메뉴1</a></li>
+          <li><a href="#">사이드메뉴2</a></li>
+          <li><a href="#">사이드메뉴3</a></li>
+        </ul>
+      </aside>
+      <section>
+        <article>
+          <h3>내용1</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sunt sapiente similique id laboriosam ad qui porro asperiores ipsa vitae obcaecati sint inventore, exercitationem suscipit voluptates dicta, veritatis molestiae nulla.</p>
+        </article>
+        <article>
+          <h3>내용2</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non incidunt quaerat nostrum nesciunt consequatur? Explicabo, iusto eos? Vitae animi, ipsam delectus aspernatur eaque distinctio accusamus iste cum nihil magnam saepe.</p>
+        </article>
+        <article>
+          <h3>내용3</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat omnis ratione beatae aliquam deleniti, libero qui doloremque recusandae nulla quos porro accusantium officiis quam eligendi quod consequuntur nemo maiores tenetur!</p>
+        </article>
+    </main>
+    <footer>
+      <!-- address태그 : 주소정보를 담는 시멘틱 태그 -->
+      <address>회사소개 및 주소</address>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>index2.html</title>
+</head>
+<body>
+<h2>타임리프의 널 체크(조건적인 렌더링)</h2>
+
+<!--  조건적 렌더링  -->
+th:if : true이면 렌더링한다.<br>
+<!--  th:block : 자체적인 로직을 위한 빈 블럭(스코우프)  -->
+<th:block th:if="${ address_null == null }">
+    <p>address_null은 null입니다.</p>
+</th:block>
+
+th:unless : false이면 렌더링한다. <br>
+<th:block th:unless="${ address_null != null }">
+    <p>address_null은 null이 아닙니다.</p>
+</th:block>
+
+삼항연산자 ?: : null이면 대체문구로 대입되고, 아니면 원래값으로 들어감 <br>
+<p th:text=" ${ address_null } ?:  'address_null은 null입니다.'  ">삼항연산자</p>
+
+defaultString함수 : null이면 기본값으로 대체된다. <br>
+<!--  타임리프 내장 함수(Lib)를 사용할 때 #을 사용한다.  -->
+<p th:text="${  #strings.defaultString(address_null, 'address_null은 null입니다.')  }">
+    defaultString함수 결과
+</p>
+
+isEmpty함수 : th:if가 true가 되면, th:text가 innerText로 들어간다. <br>
+                       th:if가 false가 되면, th:text는 무시됨.
+<p th:if=" ${ #strings.isEmpty(address_empty) }"
+   th:text="|address_empty은 empty입니다.|">
+    isEmpty함수 결과
+</p>
+<!-- ${ } : 변수 표현식(출력문) 안에 not 연산자 -->
+<p th:if="${not #strings.isEmpty(address) }" th:text="| address은 empty가 아님. |">
+    not isEmpty함수 결과
+</p>
+
+
+</body>
+</html>

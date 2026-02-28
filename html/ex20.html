@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>이미지 버튼 - image button</title>
+    <!-- 이미지 사이트 : 픽사베이, Flaticon -->
+    <style>
+      .btn {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <!-- button태그(HTML v4) vs input type:button -->
+      <input type="button" value="버튼" />
+      <button>버튼</button>
+
+      <!-- 이미지버튼 만들기 -->
+      <button class="btn">
+        <img src="play.png" alt="" />
+      </button>
+      <input type="image" src="play.png" />
+    </form>
+  </body>
+</html>

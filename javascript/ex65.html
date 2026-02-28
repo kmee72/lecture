@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex65 -->
+    <!-- 동적인 웹 : JS가 HTML과 CSS를 제어한다. -->
+    <!-- JS(TS) : 1. HTML안에서 html과 css를 제어한다. -->
+    <!--       : 2. JS 런타임(Node.js) - 프론트엔드 UI -->
+    <!--       : 3.                    - 백엔드 서버 -->
+    <script>
+      // 크롬브라우저(V8 JS런타임(실행기)) 내장객체
+      // 1. window : 웹브라우저 창(화면) 제어
+      // 2. document : DOM(Document Object Model)을 제어
+      //             : DOM - 웹브라우저가 HTML을 해석해서 가지고 있는 Data 구조.
+      // 3. location : 페이지주소(URL) 제어
+      // 4. histroy : 페이지 방문 기록 제어
+      // 5. console : 로깅(기록) 제어
+      // 6. navigator : 웹브라우저 정보와 사용자 시스템 정보
+      // 7. fecth : HTTP 통신 담당하는 내장 함수
+
+      //window객체
+      //window.open(); //비어있는 새창 열기
+      //window.open("http://www.naver.com");
+      //단독창 열기
+      window.open("http://www.google.com", "자식창", "width=600, height=300");
+    </script>
+  </head>
+</html>

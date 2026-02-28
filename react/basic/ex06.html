@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <!-- ex06.html -->
+  <head>
+    <title>컴퍼넌트에 값 전달하기(props)</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <p>컴퍼넌트에 값 전달하기(props)</p>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      //함수형 컴퍼넌트 정의
+      function Greeting(props) {
+        // JSX내에서 JS를 사용하려면, 중괄호를 쓴다.
+        // props는 KV객체로 전달된다.
+        return <h1 className="greeting">Hi~ {props.sayWhat}</h1>;
+      }
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(React.createElement(Greeting, { sayWhat: "Good Night~" }));
+    </script>
+  </body>
+</html>
+
+<!-- {
+  $$typeof: Symbol.for('react.element'), // 1. 이것이 React 요소임을 알려주는 보안 태그
+  type: 'h1',                            // 2. 어떤 태그를 만들 것인가?
+  key: null,                             // 3. 리스트 렌더링 시 필요한 고유 키
+  ref: null,                             // 4. DOM에 직접 접근하기 위한 참조
+  props: {                               // 5. 속성과 자식 요소들이 다 여기 들어감
+    className: 'greeting',
+    children: 'Hello World2~'
+  }
+} -->

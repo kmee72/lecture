@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex76 -->
+    <script>
+      // 생성자 함수와 클래스
+      // 1.일반함수
+      function user() {
+        let name = "홍길동";
+        //JS : 함수안에 함수선언 가능
+        function sayHi() {
+          console.log(this); //window객체
+          console.log(this.name);
+        }
+        sayHi();
+      }
+      user();
+      // 2.생성자함수 => object
+      //1. 함수이름이 대문자로 시작한다.
+      //2. 호출시에 new키워드를 사용한다.
+      function User(name) {
+        this.name = name;
+        this.sayHi = function () {
+          console.log("저는 " + this.name + " 입니다.");
+        };
+      }
+      const user2 = new User("철수");
+      user2.sayHi(); //"저는 철수 입니다."
+
+      let str = "문자열"; // string
+      let strObj = new String("문자열"); //object
+      // 3.클래스
+      class Animal {
+        constructor(name) {
+          this.name = name;
+        }
+        sayHi() {
+          console.log("나는 " + this.name + "입니다.");
+        }
+      }
+      const animal = new Animal("강아지");
+      animal.sayHi(); //"나는 강아지입니다."
+      // 4.객체
+      let user4 = {
+        name: "영희",
+        sayHi: function () {},
+      };
+    </script>
+  </head>
+</html>

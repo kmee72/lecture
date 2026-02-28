@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex67.html -->
+    <title>변환효과 - Transition속성</title>
+    <!-- 변환을 줄 수 있는 속성(중복가능) -->
+    <!-- 1. 위치 : top left right bottom -->
+    <!-- 2. 크기 : width height -->
+    <!-- 3. 간격 : margin padding -->
+    <!-- 4. 테두리 : border-width radius color style -->
+    <!-- 5. 색상 : color background-color -->
+    <!-- 6. 투명도 : opacity 0.0(투명) ~ 1.0(불투명) -->
+    <!-- 7. 형태 : transfor(기울기, 스케일) -->
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        /* 한줄표현 */
+        /* 모든 요소에 대해서 2초 동안 변환된다. */
+        transition: all 2s;
+      }
+      .box:hover {
+        width: 200px;
+        height: 200px;
+      }
+      .box:active {
+        background-color: red;
+        opacity: 0.8;
+        font-size: 32px;
+        border: 20px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.box{클릭} -->
+    <div class="box">클릭하세요</div>
+  </body>
+</html>

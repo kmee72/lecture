@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex06.html -->
+    <title>태그 선택자와 id, class선택자 연결</title>
+    <style>
+      /* 태그선택자.클래스선택자 연결 */
+      h1.select {
+        background-color: cyan;
+      }
+      /* 태그선택자#아이디선택자 연결 */
+      li#item {
+        color: blue;
+      }
+      .item {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="select">제목태그 H1</h1>
+    <h1>제목태그 H1</h1>
+    <ul>
+      <li class="select">아이템1</li>
+      <li id="item">아이템2</li>
+      <li class="select">아이템3</li>
+      <!-- id는 한개만, class는 여러개 들어갈 수 있다. -->
+      <li class="select item">아이템4</li>
+    </ul>
+  </body>
+</html>

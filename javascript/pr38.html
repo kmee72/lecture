@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      //문제38 최대값 구하기
+      //입력 : 10 9 8 7 6 5 4 3 2 1
+      //출력 : 10
+      let nums = "10 9 8 7 6 5 4 3 2 1";
+      let arr = nums.split(" ").map(Number);
+
+      let max = 0; //최소값
+      for (const num of arr) {
+        if (num > max) {
+          max = num;
+        }
+      }
+      console.log(max);
+    </script>
+  </head>
+</html>

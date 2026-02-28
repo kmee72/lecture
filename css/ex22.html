@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex22 -->
+    <title>배경이미지 입히기</title>
+    <style>
+      body {
+        /* 배경이미지 설정 */
+        background-image: url("bg.png");
+        /* 반복제거 */
+        background-repeat: no-repeat;
+        /* cover : 배경영역을 완전히 덮는다. */
+        /*         이미지 해상도 유지, 잘림현상 */
+        /* contain : 이미지가 전체 다 보이도록 한다. */
+        /*           화면 여백이 생길 수 있다. */
+        background-size: cover;
+        background-position: top center;
+      }
+      body {
+        /* ccs 한줄 표현  : 이미지 반복 위치 크기 */
+        background: url("bg2.png") no-repeat top center / cover;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div>p{문단태그입니다.}*5 -->
+    <div>
+      <p>문단태그입니다.</p>
+      <p>문단태그입니다.</p>
+      <p>문단태그입니다.</p>
+      <p>문단태그입니다.</p>
+      <p>문단태그입니다.</p>
+    </div>
+  </body>
+</html>

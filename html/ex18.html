@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>입력태그의 종류 1/2</title>
+  </head>
+  <body>
+    <!-- action속성: 서버주소 -->
+    <form action="">
+      <!-- label태그: 입력태그의 제목 -->
+      <!-- for속성: 연결된 입력태그 id를 지정 -->
+      <label for="nickname">별명</label>
+      <!-- id속성: html문서안에서 유일한 구분자 -->
+      <input type="text" id="nickname" placeholder="별명을 입력하세요" /><br />
+      <!-- placeholder: 힌트문구 -->
+      <label for="address">주소</label>
+      <input type="text" id="address" placeholder="주소입력" />
+
+      <!-- 제출 버튼 -->
+      <!-- value속성: 입력태그의 실제값 -->
+      <br /><input type="submit" value="로그인" />
+
+      <!-- 입력 버튼 태그 -->
+      <br /><input type="button" value="버튼" onclick="alert('버튼클릭!');" />
+
+      <!-- submit버튼 vs button 버튼 -->
+      <!-- submit : 제출(전송시작!)되는 버튼 -->
+      <!-- button : 클릭효과만 있다. -->
+    </form>
+  </body>
+</html>

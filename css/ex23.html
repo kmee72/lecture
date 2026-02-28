@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex23 -->
+    <title>DIV에 이미지 입히기</title>
+    <style>
+      div {
+        border: 5px solid red;
+        width: 1500px;
+        height: 1500px;
+        background-image: url("cat.png");
+        background-repeat: no-repeat;
+
+        /* 이미지의 위치 설치 */
+        /*                   X값 Y값  */
+        /* background-position: 10px 20px; */
+        /* 가로 : left center right */
+        /* 세로 : top center bottom */
+        /* background-position: center bottom; */
+
+        /*                  0% left 100% right */
+        /*                  0% top  100% bottom */
+        /*                  center center */
+        background-position: 50% 50%;
+
+        /* contain : 이미지의 Width,Height 중에 큰 값이 캔버스에 맞춤 */
+        /*           흰 공백이 생김 */
+        /* cover :                              작은 값이 캔버스에 맞춤 */
+        /*           이미지 잘림 */
+        /* 캔버스 해상도와 이미지를 해상도를 맞추는 게 좋다. */
+        /* background-image: url("bg.png"); */
+        /* background-size: contain; */
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

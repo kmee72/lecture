@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex33 -->
+    <title>최대값, 최소값 구하기</title>
+    <script>
+      // 최대값 구하기 알고리즘(공식)
+      //1. 가장 작은 수를 max값에 넣는다.
+      //2. 모든 수와 max를 비교하고
+      //3. max보다 더 큰 수를 max에 넣는다.
+      //4. 2~3의 과정을 반복한다.
+      //5. 결국 max에는 최대값이 남는다.
+      let max = Number.MIN_SAFE_INTEGER; //가장 작은 값으로 초기화, 반복문 밖에서!
+      for (let i = 0; i < 10; i++) {
+        let num = Math.floor(Math.random() * 100) + 1; // 1~100
+        console.log(num);
+        if (num > max) {
+          //비교하는 수가 더 크면, max에 넣는다.
+          max = num;
+        }
+      }
+      console.log("최대값", max);
+
+      let min = Number.MAX_SAFE_INTEGER; //정수 최대값으로 초기화
+      for (let i = 0; i < 10; i++) {
+        let num = Math.floor(Math.random() * 100) + 1; // 1~100
+        console.log(num);
+        if (num < min) {
+          //더 작으면, min에 넣는다.
+          min = num;
+        }
+      }
+      console.log("최소값", min);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 웹과 Flex 연결</title>
+    <style>
+      /* 초기화 코드 */
+      * {
+        margin: 0;
+        padding: 0;
+        /* w,h = b + p + c */
+        box-sizing: border-box;
+        font-size: 32px;
+        font-weight: bold;
+      }
+      /* PC해상도 */
+      #wrapper {
+        /* display:inline-block 으로 아이템속성을 바꾼다. */
+        /* 주축방향 : row */
+        /* 교차축방향 : colomn */
+        /* 줄바꿈 : nowrap */
+        /* 주축 정렬 : flex-start */
+        /* 교차축 정렬 : stretch */
+        display: flex;
+        /* 주축방향, 줄바꿈 wrap줄바꿈됨. */
+        flex-flow: row wrap;
+      }
+      #wrapper div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #header {
+        background-color: greenyellow;
+        height: 100px;
+        /* 기본값, w,h참조->콘텐츠너비 */
+        flex-basis: auto;
+        /* 기본값, 0 콘텐츠너비, 1 1/N차지 */
+        flex-grow: 1;
+        /* 기본값 1 1/N차지 */
+        flex-shrink: 1;
+      }
+      #ad {
+        background-color: blueviolet;
+        height: 100px;
+        /* 
+        기본값
+        flex-grow: 0;
+        flex-shrink: 1; 
+        flex-basis: auto;
+        */
+
+        /* flex 한줄표현 */
+        /*    grow shrink basis  */
+        flex: 0 1 auto;
+
+        /* 1개 표현 */
+        /*    1 1 0%  균등배분*/
+        /*    flex-grow가 1이라는 뜻 */
+        flex: 1;
+        /*    1 1 200px */
+        flex: 200px;
+
+        /* 2개 표현 */
+        /*    1 2 0% */
+        flex: 1 2;
+        /*    1 1 200px */
+        flex: 1 200px;
+        /*    1 1 20% */
+        flex: 1 20%;
+      }
+      #info {
+        background-color: lightskyblue;
+        height: 100px;
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+      #footer {
+        background-color: brown;
+        height: 100px;
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+      /* Tablet해상도 */
+      /* Mobile해상도 */
+    </style>
+  </head>
+  <body>
+    <!-- id : 웹문서에 유일한 요소 -->
+    <!-- class : 여러개의 요소를 묶을 때 -->
+
+    <!-- 전체 웹을 감싸는 div -->
+    <div id="wrapper">
+      <!-- 시멘틱 태그를 통한 웹페이지 구성 -->
+      <div id="header">
+        <p>헤더</p>
+      </div>
+      <div id="ad">
+        <p>광고</p>
+      </div>
+      <div id="info">
+        <p>정보</p>
+      </div>
+      <div id="footer">
+        <p>푸터</p>
+      </div>
+    </div>
+  </body>
+</html>

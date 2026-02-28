@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex49 -->
+    <title>flex로 시맨틱 태그 기반 웹 만들기</title>
+    <!-- 최상위 래퍼 태그 사용하기 -->
+    <style>
+      #wrapper {
+        margin: 0 auto;
+        width: 1000px;
+      }
+      .box {
+        color: white;
+        font-weight: 500;
+        border: 1px solid black;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      header {
+        background: purple;
+        height: 50px;
+      }
+      nav {
+        background: green;
+        height: 50px;
+      }
+      main {
+        display: flex;
+      }
+      section {
+        background: darkcyan;
+        height: 200px;
+        width: 70%;
+      }
+      aside {
+        background: orange;
+        height: 200px;
+        width: 30%;
+      }
+      footer {
+        background: darkolivegreen;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header class="box">Header</header>
+      <nav class="box">Nav</nav>
+      <main>
+        <section class="box">Section</section>
+        <aside class="box">Aside</aside>
+      </main>
+      <footer class="box">Footer</footer>
+    </div>
+  </body>
+</html>

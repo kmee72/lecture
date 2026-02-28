@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex61 -->
+    <script>
+      // 고차함수(Higher-Order Function), 배열 메소드
+      //   : 함수를 매개변수로 받거나 함수를 반환하는 함수
+      // forEach, map, reduce, find, filter함수
+
+      //forEach함수
+      let arr = [10, 20, 30, 40, 50];
+      //전체순회
+      //const 상수: 한번 값이 할당되면 변경불가. 값변경 불가(안정성).
+      for (const item of arr) {
+        console.log(item);
+      }
+      //고차함수는 함수를 입력으로 받을 수 있다.
+      //함수실행을 대행하도록 하는 것.
+      arr.forEach(() => {});
+      //item : 배열의 아이템
+      //index : 순번
+      //array : 배열원본
+      arr.forEach((item, index, array) => {
+        console.log(item, index, array);
+      });
+      arr.forEach((item) => {
+        console.log(item);
+      });
+      arr.forEach((item, index) => {
+        console.log(item, index);
+      });
+
+      //map함수 : 원본배열은 변경되지 않음. sort()함수은 원본변경됨.
+      const newArr = arr.map((item) => {
+        return item * 2;
+      });
+      //용도 : 기본 배열에 어떤 처리를 가해 새로운 배열을 만들때.
+      console.log(arr);
+      console.log(newArr); //[10*2, 20*2, 30*2, 40*2, 50*2]
+
+      //예) 문자열을 모두 숫자로 바꿀때
+      let str = "10 20 30 40 50";
+      //숫자배열로 바꾸자.
+      let nums = str.split(" ").map(Number);
+      let nums2 = str.split(" ").map((item) => {
+        return Number(item);
+      });
+      console.log(nums);
+      console.log(typeof nums[0]);
+
+      //map(String) : 배열전체를 string타입으로 변경
+
+      //KV객체 배열에서의 경우
+      const users = [
+        { id: 1, name: "hong" },
+        { id: 2, name: "park" },
+        { id: 3, name: "lee" },
+      ];
+      users.forEach((user) => {
+        console.log(user.name);
+      });
+    </script>
+  </head>
+</html>

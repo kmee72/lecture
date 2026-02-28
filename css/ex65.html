@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex66.html -->
+    <title>큰 이미지를 쪼개쓰기-스프라이트</title>
+    <!-- 스프라이트(통) : 이미지 여러 이미지가 한장의 파일에 있는 것 -->
+    <!-- logo_kakao.png  -->
+    <!-- ico_comm.png -->
+    <!-- 아이디는 샵, 클래스는 점 -->
+    <!-- 아이디어는 올라가고, 클래스는 점찍고 -->
+    <style>
+      #logo {
+        display: inline-block;
+        /*                                          X Y 위치값 */
+        background: url("logo_kakao.png") no-repeat 0 0;
+        /* 통이미지 크기 */
+        background-size: 200px 160px;
+        /* 통이미지에서 가져오는 위치 */
+        background-position: 0 0;
+
+        /* 실제 뿌려지는 이미지 크기*/
+        width: 200px;
+        height: 80px;
+      }
+      #icon1 {
+        display: inline-block;
+        background: url("ico_comm.png") no-repeat 0 0;
+        background-size: 300px 300px;
+        background-position: 0 0;
+
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <span>카카오 로고</span><br />
+    <div id="logo"></div>
+    <br />
+    <span>카카오 아이콘</span><br />
+    <div id="icon1"></div>
+    <br />
+  </body>
+</html>

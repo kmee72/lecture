@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      //문제37
+      //십진수를 이진수로
+      // 입력: 10
+      // 출력: 1010
+      let num = 2;
+      let 나머지 = 0;
+      let 이진수 = "";
+      do {
+        나머지 = num % 2;
+        num = Math.floor(num / 2);
+        이진수 = 나머지 + 이진수;
+      } while (num > 0);
+      console.log(이진수);
+
+      let num2 = 2;
+      console.log(num2.toString(2));
+    </script>
+  </head>
+</html>

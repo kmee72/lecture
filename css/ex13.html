@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex13.html -->
+    <title>상태선택자</title>
+    <!-- 상태 : 포커스, 비활성화, 체크됨, 선택됨 -->
+    <!-- 포커스 : 입력대기상태 -->
+    <!-- 비활성화 : 입력불가상태   -->
+    <!-- 체크됨 : checked 체크박스 -->
+    <!-- 선택됨 : selected 선택박스, 라디오버튼 -->
+    <style>
+      /* 활성화상태 */
+      input:enabled {
+        background-color: red;
+      }
+      /* 비활성화 상태 */
+      input:disabled {
+        background-color: darkcyan;
+      }
+      /* 포커스 상태 */
+      input:focus {
+        background-color: purple;
+      }
+      /* 체크된 상태 */
+      input:checked {
+        /* 바깥테두리선 */
+        outline: 10px solid red;
+      }
+      /* 선택된 상태 */
+      /* selected와 checked는 같은 의미 */
+      option:checked {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>활성화 상태</h1>
+    <input type="text" />
+    <h1>비활성화 상태</h1>
+    <input type="text" disabled />
+    <h1>체크박스</h1>
+    <input type="checkbox" checked />
+    <h1>선택박스</h1>
+    <select>
+      <option>사과</option>
+      <option selected>감귤</option>
+    </select>
+  </body>
+</html>

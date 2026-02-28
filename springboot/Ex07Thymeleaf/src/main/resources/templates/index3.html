@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>index3.html</title>
+</head>
+<body>
+    <h2>타임리프의 형식화된 출력</h2>
+    <p th:text="${ #dates.format(standardDate, 'yyyy/MM/dd HH:mm:ss') }"></p>
+    <p th:text="${ #temporals.format(localDate, 'yyyy/MM/dd')   }"></p>
+    <p th:text="${ #temporals.format(localDateTime, 'yyyy/MM/dd HH:mm:ss')   }"></p>
+
+    <p th:text="${ #numbers.formatInteger(number1, 3, 'COMMA') }"></p>
+    <p th:text="|${ #numbers.formatInteger(number1, 3, 'COMMA') }원|"></p>
+    <p th:text="${ #numbers.formatDecimal(number2, 3, 'COMMA', 2, 'POINT') }"></p>
+
+</body>
+</html>

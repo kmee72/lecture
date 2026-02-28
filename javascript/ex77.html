@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex77 -->
+    <title>JS로 html속성 다루기</title>
+    <script>
+      function changeImg() {
+        let img = document.getElementById("img");
+        let h1 = document.getElementById("name");
+        if (img.getAttribute("src") === "apple.png") {
+          img.setAttribute("src", "banana.png");
+        } else {
+          img.setAttribute("src", "apple.png");
+        }
+        h1.innerHTML = "이미지 이름:" + img.getAttribute("src");
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="name">이미지 이름</h1>
+    <button onclick="changeImg();">이미지 변경하기</button>
+    <br />
+    <br />
+    <img src="apple.png" id="img" />
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex74 -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Navigation Menu</title>
+    <style>
+      body {
+        /* 기본마진 8 */
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .nav {
+        background-color: #333;
+        padding: 0;
+      }
+      .nav-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+      .nav-item {
+        /* 자식요소에 absolute적용하려고 */
+        position: relative;
+      }
+      /* Menu1~3 */
+      .nav-item > a {
+        display: inline-block;
+        padding: 15px 20px;
+        color: white;
+        /* 밑줄 제거 */
+        text-decoration: none;
+      }
+      .nav-item > a:hover {
+        background-color: #555;
+      }
+      /* 드롭다운 메뉴 */
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: #444;
+        /* 안보이게(자기영역도 사라짐) */
+        display: none;
+        /* 충분히 위로 올린다. */
+        z-index: 1000;
+      }
+      .dropdown li {
+        width: 200px;
+      }
+      .dropdown a {
+        display: block;
+        padding: 10px 15px;
+        color: white;
+        text-decoration: none;
+      }
+      .dropdown a:hover {
+        background-color: #555;
+      }
+      /* 커서가 올라갔을때 드롭다운 표시 */
+      .nav-item:hover .dropdown {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#">Menu1</a>
+          <ul class="dropdown">
+            <li><a href="#">Submenu1</a></li>
+            <li><a href="#">Submenu2</a></li>
+            <li><a href="#">Submenu3</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#">Menu2</a>
+          <ul class="dropdown">
+            <li><a href="#">Submenu1</a></li>
+            <li><a href="#">Submenu2</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#">Menu3</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
